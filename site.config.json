@@ -118,11 +118,10 @@
     }
   ],
   "social": {
-    "facebook": "https://www.facebook.com/",
-    "instagram": "https://www.instagram.com/",
-    "telegram": "https://t.me/"
+    "instagram": "https://www.instagram.com/officialkkeight_/",
+    "facebook": "https://www.facebook.com/profile.php?id=61590222761776",
+    "telegram": "https://t.me/kk8officialchannel"
   },
-  "socialNote": "Placeholder roots — KK8 channel handles to be confirmed by client before publish.",
   "responsibleGambling": {
     "org": "Kaan Pete Roi",
     "orgBn": "কান পেতে রই",
@@ -197,5 +196,56 @@
     ],
     "methodologyBn": "এই স্কোর ছয়টি নির্দিষ্ট মানদণ্ডে দেওয়া হয়েছে এবং প্রতিটি দাবি ২৪ সেপ্টেম্বর ২০২৬ তারিখে KK8-এর অফিসিয়াল প্ল্যাটফর্মে সরাসরি যাচাই করা হয়েছে। যা যাচাই করা যায়নি, তা স্কোরে ইতিবাচকভাবে ধরা হয়নি। প্ল্যাটফর্ম পরিবর্তিত হলে স্কোর হালনাগাদ করা হবে।",
     "note": "Honest criteria rating derived from the 2026-09-24 verification pass. Unverifiable items were NOT scored favourably. Client-facing — flag for approval."
-  }
+  },
+  "featuredGames": [
+    {
+      "name": "Gates of Olympus Super Scatter",
+      "provider": "Pragmatic Play"
+    },
+    {
+      "name": "Sugar Rush 1000",
+      "provider": "Pragmatic Play"
+    },
+    {
+      "name": "Fury of Anubis",
+      "provider": "Pragmatic Play"
+    },
+    {
+      "name": "Starlight Princess 1000",
+      "provider": "Lucky365"
+    },
+    {
+      "name": "Fortune Tiger",
+      "provider": "Lucky365"
+    },
+    {
+      "name": "Treasures of Aztec",
+      "provider": "Lucky365"
+    },
+    {
+      "name": "Wild Bandito",
+      "provider": "Lucky365"
+    },
+    {
+      "name": "Monkey King3",
+      "provider": "Lucky365"
+    },
+    {
+      "name": "Wild Bounty Showdown",
+      "provider": "Lucky365"
+    },
+    {
+      "name": "Mahjong Ways 2",
+      "provider": "Microslot"
+    },
+    {
+      "name": "Money Pot",
+      "provider": "Microslot"
+    },
+    {
+      "name": "Sugar Teddy x1000",
+      "provider": "BNG"
+    }
+  ],
+  "featuredGamesSource": "Observed in the 'Hot Games' rail on kk8official.com, verified 2026-09-24. Titles and providers only — no thumbnails are copied or hotlinked."
 }

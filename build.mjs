@@ -81,6 +81,32 @@ function categoryGrid() {
   ).join('\n');
 }
 
+/** Featured game cards. Titles and providers are verified; thumbnails are NOT
+ *  copied or hotlinked from the operator, so each card uses a typographic tile
+ *  built from brand tokens. Keeps the grid fast and CLS-free. */
+function gameGrid() {
+  const ramps = [
+    'from-brand-navy to-brand-blue',
+    'from-brand-blue to-brand-bright',
+    'from-brand-bright to-brand-navy',
+  ];
+  return cfg.featuredGames.map((g, i) => {
+    const initials = g.name.split(/\s+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+    return `<li>
+      <a href="${moneyUrl()}" rel="nofollow noopener" target="_blank"
+         class="group block overflow-hidden rounded-base border border-brand-hair bg-white transition hover:border-brand-blue hover:shadow-md">
+        <div class="flex h-24 items-center justify-center bg-gradient-to-br ${ramps[i % ramps.length]}">
+          <span class="text-2xl font-black tracking-tight text-white/90" aria-hidden="true">${initials}</span>
+        </div>
+        <div class="p-3">
+          <p class="truncate text-sm font-bold text-brand-navy" title="${esc(g.name)}">${esc(g.name)}</p>
+          <p class="mt-0.5 text-xs text-brand-slate">${esc(g.provider)}</p>
+        </div>
+      </a>
+    </li>`;
+  }).join('\n');
+}
+
 function trustMarks() {
   return cfg.trustMarks.map((t) =>
     `<li class="rounded-pill border border-brand-hair px-3 py-1 text-xs font-semibold text-brand-slate">${esc(t)}</li>`
@@ -282,6 +308,7 @@ for (const page of pages) {
     paymentList: paymentList(),
     categoryGrid: categoryGrid(),
     trustMarks: trustMarks(),
+    gameGrid: gameGrid(),
     moneyUrl: moneyUrl(),
     year: new Date().getFullYear(),
     bodyClass: `tpl-${page.template}`,
