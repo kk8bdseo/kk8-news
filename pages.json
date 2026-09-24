@@ -1,16 +1,39 @@
 {
   "pages": [
     {
+      "slug": "login-guide",
+      "template": "guide",
+      "tier": 2,
+      "pageClass": "guide",
+      "priority": "0.8",
+      "changefreq": "monthly",
+      "primaryKeyword": "kk8 log in",
+      "secondary": [
+        "kk8 login password",
+        "kk8 login app"
+      ],
+      "title": "KK8 লগইন গাইড — সমস্যা ও সমাধান | বাংলাদেশ",
+      "h1": "KK8 লগইন গাইড — অ্যাক্সেস, সমস্যা ও সমাধান",
+      "meta": "KK8 login করার সঠিক পদ্ধতি, পাসওয়ার্ড রিসেট, অ্যাকাউন্ট লক ও ফেক লগইন পেজ এড়ানোর উপায় — বাংলাদেশ গাইড।",
+      "schema": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "bdVolume": 90,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
+    },
+    {
       "slug": "index",
       "template": "home",
-      "tier": 2,
+      "tier": 1,
       "pageClass": "home",
-      "priority": "1.0",
+      "priority": "0.8",
       "changefreq": "weekly",
       "primaryKeyword": "kk8 bd",
       "secondary": [
-        "kk8 bangladesh review",
-        "kk8 overview"
+        "kk8 bangladesh",
+        "kk8 review"
       ],
       "title": "KK8 BD — স্বাধীন রিভিউ, গাইড ও ট্রাস্ট বিশ্লেষণ",
       "h1": "KK8 BD — বাংলাদেশ প্লেয়ারদের জন্য স্বাধীন রিভিউ হাব",
@@ -19,19 +42,128 @@
         "Organization",
         "WebSite",
         "BreadcrumbList"
-      ]
+      ],
+      "bdVolume": 50,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
+    },
+    {
+      "slug": "app-download-guide",
+      "template": "guide",
+      "tier": 2,
+      "pageClass": "guide",
+      "priority": "0.8",
+      "changefreq": "monthly",
+      "primaryKeyword": "kk8 apk",
+      "secondary": [
+        "kk8 apk download latest version",
+        "kk8 apps download"
+      ],
+      "title": "KK8 অ্যাপ ডাউনলোড গাইড — APK নিরাপত্তা | বাংলাদেশ",
+      "h1": "KK8 অ্যাপ ডাউনলোড গাইড — APK ও iOS, নিরাপদে",
+      "meta": "KK8 app কোথা থেকে ডাউনলোড করবেন, APK নিরাপত্তা যাচাই, ইনস্টল ধাপ ও ভুয়া অ্যাপ চেনার উপায় — বাংলাদেশ গাইড।",
+      "schema": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "bdVolume": 30,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
+    },
+    {
+      "slug": "faq",
+      "template": "faq",
+      "tier": 3,
+      "pageClass": "support",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "primaryKeyword": "kk8 info",
+      "secondary": [],
+      "title": "KK8 FAQ — প্রশ্ন ও উত্তর | KK8 Review BD",
+      "h1": "KK8 FAQ — বাংলাদেশ প্লেয়ারদের প্রশ্নের উত্তর",
+      "meta": "KK8 নিয়ে সবচেয়ে বেশি জিজ্ঞাসিত প্রশ্ন ও স্বাধীন উত্তর — বিশ্বস্ততা, লাইসেন্স, পেমেন্ট, উইথড্র, অ্যাপ ও সাপোর্ট।",
+      "schema": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "bdVolume": 20,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
+    },
+    {
+      "slug": "bonus-review",
+      "template": "review",
+      "tier": 3,
+      "pageClass": "review",
+      "priority": "0.6",
+      "changefreq": "weekly",
+      "primaryKeyword": "kk8 free credit",
+      "secondary": [
+        "kk8 bonus"
+      ],
+      "title": "KK8 বোনাস রিভিউ — অফার ও শর্ত বিশ্লেষণ | বাংলাদেশ",
+      "h1": "KK8 বোনাস ও প্রোমো রিভিউ — সত্যিই কি লাভজনক?",
+      "meta": "KK8-এর বোনাস অফার, রিবেট ও রিলোড প্রোমোর নিরপেক্ষ বিশ্লেষণ — শর্তাবলি, টার্নওভার ও বাংলাদেশ প্লেয়ারদের জন্য বাস্তব মূল্য।",
+      "schema": [
+        "Article",
+        "Review",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "bdVolume": 10,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
+    },
+    {
+      "slug": "games-software",
+      "template": "content",
+      "tier": 3,
+      "pageClass": "support",
+      "priority": "0.6",
+      "changefreq": "monthly",
+      "primaryKeyword": "kk8 game",
+      "secondary": [
+        "kk8 slot"
+      ],
+      "title": "KK8 গেম ও সফটওয়্যার — প্রোভাইডার বিশ্লেষণ | বাংলাদেশ",
+      "h1": "KK8 গেম ও সফটওয়্যার — প্রোভাইডার ও ক্যাটাগরি",
+      "meta": "KK8-এর গেম প্রোভাইডার — Pragmatic Play, Lucky365, JDB, Monkey King, AE Sexy। স্লট, লাইভ ক্যাসিনো, স্পোর্টস, লটারি ও রেসিং বিশ্লেষণ।",
+      "schema": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "bdVolume": 10,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
+    },
+    {
+      "slug": "news",
+      "template": "content",
+      "tier": 3,
+      "pageClass": "support",
+      "priority": "0.6",
+      "changefreq": "weekly",
+      "primaryKeyword": "kk8 live",
+      "secondary": [
+        "kk8 news"
+      ],
+      "title": "KK8 নিউজ ও আপডেট | KK8 Review BD",
+      "h1": "KK8 নিউজ ও আপডেট",
+      "meta": "KK8 সম্পর্কিত সর্বশেষ আপডেট — প্ল্যাটফর্ম পরিবর্তন, নতুন প্রোভাইডার, প্রোমো পরিবর্তন ও ক্লোন সাইট সতর্কতা।",
+      "schema": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "bdVolume": 10,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
     },
     {
       "slug": "kk8-review",
       "template": "review",
       "tier": 3,
       "pageClass": "review",
-      "priority": "0.95",
+      "priority": "0.4",
       "changefreq": "monthly",
       "primaryKeyword": "kk8 review",
       "secondary": [
-        "kk8 review bangladesh",
-        "kk8 rating"
+        "kk8 casino review"
       ],
       "title": "KK8 রিভিউ ২০২৬ — পূর্ণ বিশ্লেষণ ও রেটিং | বাংলাদেশ",
       "h1": "KK8 রিভিউ ২০২৬ — পূর্ণ বিশ্লেষণ, রেটিং ও ভার্ডিক্ট",
@@ -59,20 +191,21 @@
           "q": "উইথড্র আটকে গেলে সাধারণ কারণ কী?",
           "a": "সবচেয়ে সাধারণ কারণ দুটি — অসম্পূর্ণ অ্যাকাউন্ট ভেরিফিকেশন, এবং অ্যাকাউন্টের নাম ও মোবাইল ওয়ালেটের নাম না মেলা। বোনাস নেওয়া থাকলে টার্নওভার শর্ত পূরণ না হওয়াও একটি কারণ।"
         }
-      ]
+      ],
+      "bdVolume": 0,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
     },
     {
       "slug": "is-kk8-legit",
       "template": "trust",
       "tier": 3,
       "pageClass": "trust",
-      "priority": "0.95",
+      "priority": "0.4",
       "changefreq": "monthly",
       "primaryKeyword": "is kk8 legit",
       "secondary": [
         "kk8 safe",
-        "kk8 real",
-        "kk8 scam"
+        "kk8 real"
       ],
       "title": "KK8 কি বিশ্বস্ত ও নিরাপদ? লাইসেন্স যাচাই | বাংলাদেশ",
       "h1": "KK8 কি বিশ্বস্ত ও নিরাপদ? — প্রমাণভিত্তিক বিশ্লেষণ",
@@ -81,19 +214,19 @@
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "bdVolume": 0,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
     },
     {
       "slug": "registration-guide",
       "template": "guide",
-      "tier": 2,
+      "tier": 3,
       "pageClass": "guide",
-      "priority": "0.8",
+      "priority": "0.4",
       "changefreq": "monthly",
-      "primaryKeyword": "kk8 registration guide",
-      "secondary": [
-        "kk8 sign up guide bd"
-      ],
+      "primaryKeyword": "kk8 register",
+      "secondary": [],
       "title": "KK8 রেজিস্ট্রেশন গাইড — ধাপে ধাপে | বাংলাদেশ",
       "h1": "KK8 রেজিস্ট্রেশন গাইড — ধাপে ধাপে অ্যাকাউন্ট খোলা",
       "meta": "KK8-এ অ্যাকাউন্ট খোলার সম্পূর্ণ গাইড — প্রয়োজনীয় তথ্য, ভেরিফিকেশন, সাধারণ ভুল ও নিরাপত্তা পরামর্শ বাংলাদেশ প্লেয়ারদের জন্য।",
@@ -101,62 +234,19 @@
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
-    },
-    {
-      "slug": "login-guide",
-      "template": "guide",
-      "tier": 2,
-      "pageClass": "guide",
-      "priority": "0.8",
-      "changefreq": "monthly",
-      "primaryKeyword": "kk8 login guide",
-      "secondary": [
-        "kk8 login problem",
-        "kk8 password reset"
       ],
-      "title": "KK8 লগইন গাইড — সমস্যা ও সমাধান | বাংলাদেশ",
-      "h1": "KK8 লগইন গাইড — অ্যাক্সেস, সমস্যা ও সমাধান",
-      "meta": "KK8 login করার সঠিক পদ্ধতি, পাসওয়ার্ড রিসেট, অ্যাকাউন্ট লক ও ফেক লগইন পেজ এড়ানোর উপায় — বাংলাদেশ গাইড।",
-      "schema": [
-        "Article",
-        "BreadcrumbList",
-        "FAQPage"
-      ]
-    },
-    {
-      "slug": "app-download-guide",
-      "template": "guide",
-      "tier": 2,
-      "pageClass": "guide",
-      "priority": "0.8",
-      "changefreq": "monthly",
-      "primaryKeyword": "kk8 app download guide",
-      "secondary": [
-        "kk8 apk safe",
-        "kk8 app review"
-      ],
-      "title": "KK8 অ্যাপ ডাউনলোড গাইড — APK নিরাপত্তা | বাংলাদেশ",
-      "h1": "KK8 অ্যাপ ডাউনলোড গাইড — APK ও iOS, নিরাপদে",
-      "meta": "KK8 app কোথা থেকে ডাউনলোড করবেন, APK নিরাপত্তা যাচাই, ইনস্টল ধাপ ও ভুয়া অ্যাপ চেনার উপায় — বাংলাদেশ গাইড।",
-      "schema": [
-        "Article",
-        "BreadcrumbList",
-        "FAQPage"
-      ]
+      "bdVolume": 0,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
     },
     {
       "slug": "deposit-guide",
       "template": "guide",
-      "tier": 2,
+      "tier": 3,
       "pageClass": "guide",
-      "priority": "0.85",
+      "priority": "0.4",
       "changefreq": "monthly",
-      "primaryKeyword": "kk8 deposit guide",
-      "secondary": [
-        "kk8 bkash deposit",
-        "kk8 nagad deposit"
-      ],
+      "primaryKeyword": "kk8 deposit",
+      "secondary": [],
       "title": "KK8 ডিপোজিট গাইড — বিকাশ, নগদ, রকেট | বাংলাদেশ",
       "h1": "KK8 ডিপোজিট গাইড — বিকাশ, নগদ ও রকেট দিয়ে",
       "meta": "KK8-এ ডিপোজিট করার গাইড — বিকাশ, নগদ ও রকেট। ধাপে ধাপে নির্দেশনা, নিরাপত্তা যাচাই ও সাধারণ সমস্যার সমাধান।",
@@ -164,20 +254,19 @@
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
+      ],
+      "bdVolume": 0,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
     },
     {
       "slug": "withdrawal-guide",
       "template": "guide",
       "tier": 3,
       "pageClass": "guide",
-      "priority": "0.85",
+      "priority": "0.4",
       "changefreq": "monthly",
       "primaryKeyword": "kk8 withdrawal",
-      "secondary": [
-        "kk8 withdraw time",
-        "kk8 cash out bd"
-      ],
+      "secondary": [],
       "title": "KK8 উইথড্র গাইড — টাকা তোলার নিয়ম | বাংলাদেশ",
       "h1": "KK8 উইথড্র গাইড — টাকা তোলার পদ্ধতি ও শর্ত",
       "meta": "KK8 withdrawal কীভাবে করবেন — পদ্ধতি, ভেরিফিকেশন শর্ত, সাধারণ বিলম্বের কারণ ও সমাধান। বাংলাদেশ প্লেয়ারদের জন্য গাইড।",
@@ -185,82 +274,38 @@
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
-    },
-    {
-      "slug": "bonus-review",
-      "template": "review",
-      "tier": 3,
-      "pageClass": "review",
-      "priority": "0.85",
-      "changefreq": "weekly",
-      "primaryKeyword": "kk8 bonus",
-      "secondary": [
-        "kk8 welcome bonus review",
-        "kk8 promo review"
       ],
-      "title": "KK8 বোনাস রিভিউ — অফার ও শর্ত বিশ্লেষণ | বাংলাদেশ",
-      "h1": "KK8 বোনাস ও প্রোমো রিভিউ — সত্যিই কি লাভজনক?",
-      "meta": "KK8-এর বোনাস অফার, রিবেট ও রিলোড প্রোমোর নিরপেক্ষ বিশ্লেষণ — শর্তাবলি, টার্নওভার ও বাংলাদেশ প্লেয়ারদের জন্য বাস্তব মূল্য।",
-      "schema": [
-        "Article",
-        "Review",
-        "BreadcrumbList",
-        "FAQPage"
-      ]
-    },
-    {
-      "slug": "games-software",
-      "template": "content",
-      "tier": 3,
-      "pageClass": "support",
-      "priority": "0.75",
-      "changefreq": "monthly",
-      "primaryKeyword": "kk8 games",
-      "secondary": [
-        "kk8 providers",
-        "kk8 software"
-      ],
-      "title": "KK8 গেম ও সফটওয়্যার — প্রোভাইডার বিশ্লেষণ | বাংলাদেশ",
-      "h1": "KK8 গেম ও সফটওয়্যার — প্রোভাইডার ও ক্যাটাগরি",
-      "meta": "KK8-এর গেম প্রোভাইডার — Pragmatic Play, Lucky365, JDB, Monkey King, AE Sexy। স্লট, লাইভ ক্যাসিনো, স্পোর্টস, লটারি ও রেসিং বিশ্লেষণ।",
-      "schema": [
-        "Article",
-        "BreadcrumbList"
-      ]
+      "bdVolume": 0,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
     },
     {
       "slug": "how-kk8-compares",
       "template": "content",
       "tier": 3,
       "pageClass": "support",
-      "priority": "0.7",
+      "priority": "0.4",
       "changefreq": "monthly",
-      "primaryKeyword": "kk8 comparison",
-      "secondary": [
-        "kk8 vs",
-        "kk8 alternative bd"
-      ],
+      "primaryKeyword": "kk8 vs",
+      "secondary": [],
       "title": "KK8 কেমন তুলনায়? — বৈশিষ্ট্য বিশ্লেষণ | বাংলাদেশ",
       "h1": "KK8 কেমন তুলনায়? — বৈশিষ্ট্যভিত্তিক বিশ্লেষণ",
       "meta": "KK8-কে লাইসেন্স, প্রোভাইডার, পেমেন্ট ও সাপোর্টের মানদণ্ডে বিশ্লেষণ — বাংলাদেশ প্লেয়ারদের বিবেচনার জন্য বস্তুনিষ্ঠ তুলনা।",
       "schema": [
         "Article",
         "BreadcrumbList"
-      ]
+      ],
+      "bdVolume": 0,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
     },
     {
       "slug": "support-review",
       "template": "review",
       "tier": 3,
       "pageClass": "review",
-      "priority": "0.75",
+      "priority": "0.4",
       "changefreq": "monthly",
       "primaryKeyword": "kk8 customer service",
-      "secondary": [
-        "kk8 support review",
-        "kk8 live chat"
-      ],
+      "secondary": [],
       "title": "KK8 কাস্টমার সাপোর্ট রিভিউ — সাড়া ও মান | বাংলাদেশ",
       "h1": "KK8 কাস্টমার সাপোর্ট রিভিউ — চ্যানেল, সাড়া ও মান",
       "meta": "KK8 customer service কতটা কার্যকর? লাইভ চ্যাট, টেলিগ্রাম ও সোশ্যাল চ্যানেলের উপলব্ধতা ও সাড়ার বিশ্লেষণ — বাংলাদেশ দৃষ্টিকোণ।",
@@ -268,39 +313,40 @@
         "Article",
         "Review",
         "BreadcrumbList"
-      ]
+      ],
+      "bdVolume": 0,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
     },
     {
       "slug": "player-ratings",
       "template": "content",
       "tier": 3,
       "pageClass": "support",
-      "priority": "0.7",
+      "priority": "0.4",
       "changefreq": "weekly",
-      "primaryKeyword": "kk8 player reviews",
-      "secondary": [
-        "kk8 ratings",
-        "kk8 user review bd"
-      ],
+      "primaryKeyword": "kk8 review",
+      "secondary": [],
       "title": "KK8 প্লেয়ার রেটিং ও ইউজার রিভিউ | বাংলাদেশ",
       "h1": "KK8 প্লেয়ার রেটিং ও ইউজার রিভিউ",
       "meta": "KK8 নিয়ে প্লেয়ারদের অভিজ্ঞতা কী বলে — রেটিং পদ্ধতি, সাধারণ প্রশংসা ও অভিযোগের ধরন। বাংলাদেশ প্লেয়ারদের জন্য সারসংক্ষেপ।",
       "schema": [
         "Article",
         "BreadcrumbList"
-      ]
+      ],
+      "bdVolume": 0,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
     },
     {
       "slug": "spot-fake-kk8-sites",
       "template": "trust",
       "tier": 3,
       "pageClass": "trust",
-      "priority": "0.95",
+      "priority": "0.4",
       "changefreq": "monthly",
-      "primaryKeyword": "fake kk8 sites",
+      "primaryKeyword": "kk8 official",
       "secondary": [
-        "kk8 clone",
-        "kk8 official site check"
+        "kk8 official site",
+        "kk8.com"
       ],
       "title": "ভুয়া KK8 সাইট চেনার উপায় — ক্লোন সতর্কতা | বাংলাদেশ",
       "h1": "ভুয়া KK8 সাইট চেনার উপায় — ক্লোন ডোমেইন সতর্কতা",
@@ -309,48 +355,9 @@
         "Article",
         "BreadcrumbList",
         "FAQPage"
-      ]
-    },
-    {
-      "slug": "faq",
-      "template": "faq",
-      "tier": 3,
-      "pageClass": "support",
-      "priority": "0.75",
-      "changefreq": "monthly",
-      "primaryKeyword": "kk8 faq",
-      "secondary": [
-        "kk8 questions",
-        "kk8 help bd"
       ],
-      "title": "KK8 FAQ — প্রশ্ন ও উত্তর | KK8 Review BD",
-      "h1": "KK8 FAQ — বাংলাদেশ প্লেয়ারদের প্রশ্নের উত্তর",
-      "meta": "KK8 নিয়ে সবচেয়ে বেশি জিজ্ঞাসিত প্রশ্ন ও স্বাধীন উত্তর — বিশ্বস্ততা, লাইসেন্স, পেমেন্ট, উইথড্র, অ্যাপ ও সাপোর্ট।",
-      "schema": [
-        "Article",
-        "BreadcrumbList",
-        "FAQPage"
-      ]
-    },
-    {
-      "slug": "news",
-      "template": "content",
-      "tier": 3,
-      "pageClass": "support",
-      "priority": "0.7",
-      "changefreq": "weekly",
-      "primaryKeyword": "kk8 news",
-      "secondary": [
-        "kk8 updates",
-        "kk8 bangladesh news"
-      ],
-      "title": "KK8 নিউজ ও আপডেট | KK8 Review BD",
-      "h1": "KK8 নিউজ ও আপডেট",
-      "meta": "KK8 সম্পর্কিত সর্বশেষ আপডেট — প্ল্যাটফর্ম পরিবর্তন, নতুন প্রোভাইডার, প্রোমো পরিবর্তন ও ক্লোন সাইট সতর্কতা।",
-      "schema": [
-        "Article",
-        "BreadcrumbList"
-      ]
+      "bdVolume": 0,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
     }
   ]
 }
