@@ -1,0 +1,43 @@
+<footer class="mt-16 border-t-2 border-brand-navy bg-white">
+  <div class="mx-auto max-w-5xl px-4 py-10">
+    <div class="grid gap-8 md:grid-cols-3">
+      <div>
+        <img src="/assets/img/logo.png" alt="KK8 রিভিউ বাংলাদেশ লোগো" width="104" height="25" class="h-[25px] w-auto">
+        <p class="mt-3 text-sm leading-bn text-brand-slate">{{tagline}}</p>
+        <p class="mt-3 text-xs leading-bn text-brand-slate">
+          প্রকাশক: {{publisher.nameBn}} · সম্পাদকীয় দায়িত্ব: {{author.nameBn}}
+        </p>
+      </div>
+      <nav aria-label="রিভিউ ও গাইড">
+        <p class="text-xs font-bold uppercase tracking-widest text-brand-slate">রিভিউ ও গাইড</p>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="/kk8-review.html" class="text-brand-navy underline decoration-brand-hair hover:decoration-brand-blue">পূর্ণ KK8 রিভিউ</a></li>
+          <li><a href="/is-kk8-legit.html" class="text-brand-navy underline decoration-brand-hair hover:decoration-brand-blue">KK8 কি নিরাপদ?</a></li>
+          <li><a href="/spot-fake-kk8-sites.html" class="text-brand-navy underline decoration-brand-hair hover:decoration-brand-blue">ভুয়া KK8 সাইট চেনার উপায়</a></li>
+          <li><a href="/withdrawal-guide.html" class="text-brand-navy underline decoration-brand-hair hover:decoration-brand-blue">উইথড্র গাইড</a></li>
+          <li><a href="/faq.html" class="text-brand-navy underline decoration-brand-hair hover:decoration-brand-blue">FAQ</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-brand-slate">লাইসেন্স তথ্য</p>
+        <p class="mt-3 text-xs leading-bn text-brand-slate">
+          KK8 {{licence.authorityBn}} সরকারের অধীনে লাইসেন্সপ্রাপ্ত — {{licence.text}} {{licence.number}}।
+          এই তথ্য {{lastVerified}} তারিখে অফিসিয়াল প্ল্যাটফর্মে যাচাই করা হয়েছে।
+        </p>
+        <p class="mt-3 text-xs leading-bn text-brand-slate">
+          অফিসিয়াল সাইট: <a href="{{sisterSite}}" rel="noopener" class="font-semibold text-brand-blue underline">{{sisterSiteName}}</a>
+        </p>
+      </div>
+    </div>
+    <div class="mt-8 border-t border-brand-hair pt-6">
+      <p class="text-xs font-bold text-brand-navy">{{minAge}}+ · দায়িত্বশীল গেমিং</p>
+      <p class="mt-2 max-w-3xl text-xs leading-bn text-brand-slate">
+        এই সাইট {{minAge}} বছরের কম বয়সীদের জন্য নয় এবং এটি কোনো আর্থিক বা আইনি পরামর্শ দেয় না।
+        জুয়া আসক্তির কারণ হতে পারে। বাংলাদেশে সহায়তা — {{responsibleGambling.orgBn}}:
+        <a href="tel:+8809612119911" class="font-semibold text-brand-blue underline">{{responsibleGambling.phone}}</a>।
+        নিজের এলাকার প্রযোজ্য নিয়ম সম্পর্কে জেনে নেওয়া পাঠকের নিজের দায়িত্ব।
+      </p>
+      <p class="mt-4 text-xs text-brand-slate">© {{year}} {{siteNameBn}} · সর্বশেষ যাচাই {{lastVerified}}</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,18 @@
+{
+  "name": "kk8-news",
+  "version": "1.0.0",
+  "description": "KK8 Bangladesh brand SEO property \u2014 static build (Tailwind + Node build script).",
+  "scripts": {
+    "css": "tailwindcss -i ./src/input.css -o ./assets/css/site.css --minify",
+    "html": "node build.mjs",
+    "build": "npm run html && npm run css",
+    "watch": "tailwindcss -i ./src/input.css -o ./assets/css/site.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  },
+  "private": true
+}

@@ -1,0 +1,16 @@
+<article class="article mx-auto max-w-5xl px-4 py-10">
+  <nav aria-label="ব্রেডক্রাম" class="mb-5 text-xs text-brand-slate">
+    <a href="/" class="underline hover:text-brand-blue">হোম</a>
+    <span aria-hidden="true"> / </span><span class="text-brand-navy">{{page.h1}}</span>
+  </nav>
+  <div class="grid gap-10 lg:grid-cols-[1fr_260px]">
+    <div class="min-w-0 max-w-prose">
+{{content}}
+    </div>
+    <aside class="space-y-6 lg:sticky lg:top-6 lg:self-start">
+{{toc}}
+      <!-- include: official-callout -->
+      <!-- include: rg-notice -->
+    </aside>
+  </div>
+</article>

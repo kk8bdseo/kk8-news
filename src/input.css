@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* KK8 Review BD — review & trust hub (editorial).
+   A deliberately different component layer from the commercial property: reading
+   measure, article rhythm, verdict/scorecard furniture. No hero, no sticky CTA. */
+
+@layer base {
+  body { text-wrap: pretty; }
+  h1, h2, h3 { letter-spacing: -0.01em; line-height: 1.3; }
+  :where(a):focus-visible, :where(button):focus-visible {
+    outline: 2px solid theme('colors.brand-blue');
+    outline-offset: 2px;
+  }
+  img { max-width: 100%; height: auto; }
+  /* Anchored headings must clear nothing — this masthead does not stick. */
+  [id] { scroll-margin-top: 1rem; }
+}
+
+@layer components {
+  /* Article rhythm, tuned for Bengali measure rather than Latin. */
+  .article h1 { @apply text-3xl font-black text-brand-navy sm:text-4xl; }
+  .article h2 {
+    @apply mb-3 mt-12 border-l-4 border-brand-blue pl-3 text-2xl font-extrabold text-brand-navy;
+  }
+  .article h3 { @apply mb-2 mt-8 text-lg font-bold text-brand-navy; }
+  .article p { @apply mb-5 leading-bn text-brand-slate; }
+  .article > p:first-of-type { @apply text-lg text-brand-navy; }
+  .article ul { @apply mb-5 space-y-2 pl-1; }
+  .article ol { @apply mb-5 list-decimal space-y-2 pl-5; }
+  .article li { @apply leading-bn text-brand-slate; }
+  .article strong { @apply font-bold text-brand-navy; }
+  .article a { @apply font-semibold text-brand-blue underline decoration-brand-hair hover:decoration-brand-blue; }
+
+  .verdict {
+    @apply rounded-base border border-brand-hair border-l-4 border-l-brand-blue bg-brand-tint p-6;
+  }
+  .verdict-label {
+    @apply text-[11px] font-bold uppercase tracking-[0.2em] text-brand-blue;
+  }
+  .proscons { @apply grid gap-4 sm:grid-cols-2; }
+  .pros, .cons { @apply rounded-base border border-brand-hair p-5; }
+  .pros li, .cons li { @apply relative pl-5 text-sm leading-bn; }
+  .pros li::before {
+    content: '+'; @apply absolute left-0 font-bold text-brand-blue;
+  }
+  .cons li::before {
+    content: '−'; @apply absolute left-0 font-bold text-brand-slate;
+  }
+  .toc ol { @apply list-decimal pl-4; }
+  .data-table { @apply w-full border-collapse text-sm; }
+  .data-table th {
+    @apply border-b-2 border-brand-hair px-3 py-2 text-left text-[11px] font-bold uppercase tracking-widest text-brand-slate;
+  }
+  .data-table td { @apply border-b border-brand-hair px-3 py-3 align-top leading-bn; }
+  .checklist li { @apply relative mb-3 pl-7 leading-bn; }
+  .checklist li::before {
+    content: '✓';
+    @apply absolute left-0 top-0 flex h-5 w-5 items-center justify-center rounded-pill bg-brand-blue text-xs font-bold text-white;
+  }
+  .faq-q {
+    @apply flex w-full items-center justify-between gap-4 border-b border-brand-hair py-4 text-left text-base font-bold text-brand-navy;
+  }
+  .faq-q[aria-expanded='true'] { @apply text-brand-blue; }
+  .faq-a { @apply pb-4 pt-1 leading-bn text-brand-slate; }
+}
