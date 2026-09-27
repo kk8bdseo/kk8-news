@@ -104,7 +104,7 @@
       "category": "স্লট"
     },
     {
-      "name": "Mega88",
+      "name": "Mega888",
       "category": "স্লট"
     },
     {
@@ -112,7 +112,7 @@
       "category": "স্লট"
     },
     {
-      "name": "AMS",
+      "name": "AskMeSlot",
       "category": "স্লট"
     },
     {
@@ -136,6 +136,10 @@
       "category": "লাইভ ক্যাসিনো"
     },
     {
+      "name": "Hot Road",
+      "category": "লাইভ ক্যাসিনো"
+    },
+    {
       "name": "SBOBET",
       "category": "স্পোর্টস ও ই-স্পোর্টস"
     },
@@ -156,15 +160,11 @@
       "category": "লটারি ও রেসিং"
     },
     {
-      "name": "Hot Road",
-      "category": "লটারি ও রেসিং"
-    },
-    {
-      "name": "Gogoli Track",
+      "name": "Gogoli",
       "category": "লটারি ও রেসিং"
     }
   ],
-  "providersSource": "All 30 providers verified live on kk8official.com/my/ via their 'Play <name>' image alts, 2026-09-27 (the rail lazy-loads below the fold — the 2026-09-24 check missed it by not scrolling, which is why that list was only 8). 28 are listed; SV388 and RCB988 are omitted deliberately: both are cockfighting-betting providers, which a Bangladesh brand property has no reason to promote.",
+  "providersSource": "30 providers verified live on kk8official.com/my/ ('Play <name>' alts) and each one's category read off KK8's own provider-card label, 2026-09-27. 28 listed; SV388 and RCB988 omitted deliberately (cockfighting betting). Card art self-hosted from KK8's CDN with client approval, re-encoded to WebP q0.7 at 280px.",
   "productCategories": [
     {
       "id": "slots",
@@ -280,105 +280,239 @@
   "featuredGames": [
     {
       "name": "Gates of Olympus Super Scatter",
-      "provider": "Pragmatic Play"
-    },
-    {
-      "name": "Sugar Rush 1000",
-      "provider": "Pragmatic Play"
+      "provider": "Pragmatic Play",
+      "img": "/assets/img/games/game-gates-of-olympus-super-scatter.webp",
+      "w": 382,
+      "h": 464
     },
     {
       "name": "Fury of Anubis",
-      "provider": "Pragmatic Play"
-    },
-    {
-      "name": "Starlight Princess 1000",
-      "provider": "Lucky365"
-    },
-    {
-      "name": "Fortune Tiger",
-      "provider": "Lucky365"
-    },
-    {
-      "name": "Treasures of Aztec",
-      "provider": "Lucky365"
-    },
-    {
-      "name": "Wild Bandito",
-      "provider": "Lucky365"
+      "provider": "Pragmatic Play",
+      "img": "/assets/img/games/game-fury-of-anubis.webp",
+      "w": 382,
+      "h": 464
     },
     {
       "name": "Monkey King3",
-      "provider": "Lucky365"
+      "provider": "Lucky365",
+      "img": "/assets/img/games/game-monkey-king3.webp",
+      "w": 382,
+      "h": 464
     },
     {
-      "name": "Wild Bounty Showdown",
-      "provider": "Lucky365"
+      "name": "MahjongComing",
+      "provider": "Lucky365",
+      "img": "/assets/img/games/game-mahjongcoming.webp",
+      "w": 382,
+      "h": 464
     },
     {
-      "name": "Mahjong Ways 2",
-      "provider": "Microslot"
-    },
-    {
-      "name": "Money Pot",
-      "provider": "Microslot"
+      "name": "Pinata Wins",
+      "provider": "Lucky365",
+      "img": "/assets/img/games/game-pinata-wins.webp",
+      "w": 382,
+      "h": 464
     },
     {
       "name": "Sugar Teddy x1000",
-      "provider": "BNG"
+      "provider": "BNG",
+      "img": "/assets/img/games/game-sugar-teddy-x1000.webp",
+      "w": 382,
+      "h": 464
     }
   ],
-  "featuredGamesSource": "Observed in the 'Hot Games' rail on kk8official.com, verified 2026-09-24. Titles and providers only — no thumbnails are copied or hotlinked.",
+  "featuredGamesSource": "KK8 'Hot Games' rail, kk8official.com/my/, present on both 2026-09-24 and 2026-09-27; provider attribution as the operator lists it. Card art self-hosted with client approval.",
   "providerGroups": [
     {
       "id": "slots",
       "labelBn": "স্লট",
       "providers": [
-        "Pragmatic Play",
-        "Lucky365",
-        "JILI",
-        "JDB",
-        "Monkey King",
-        "Microslot",
-        "NextSpin",
-        "BNG",
-        "FaChai",
-        "CQ9",
-        "Red Tiger",
-        "RSG",
-        "YGR",
-        "Mega88",
-        "King Midas",
-        "AMS",
-        "Pragmatic Play Pop"
+        {
+          "name": "Pragmatic Play",
+          "img": "/assets/img/providers/provider-pragmatic-play.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "Lucky365",
+          "img": "/assets/img/providers/provider-lucky365.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "JILI",
+          "img": "/assets/img/providers/provider-jili.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "JDB",
+          "img": "/assets/img/providers/provider-jdb.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "Monkey King",
+          "img": "/assets/img/providers/provider-monkey-king.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "Microslot",
+          "img": "/assets/img/providers/provider-microslot.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "NextSpin",
+          "img": "/assets/img/providers/provider-nextspin.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "BNG",
+          "img": "/assets/img/providers/provider-bng.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "FaChai",
+          "img": "/assets/img/providers/provider-fachai.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "CQ9",
+          "img": "/assets/img/providers/provider-cq9.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "Red Tiger",
+          "img": "/assets/img/providers/provider-red-tiger.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "RSG",
+          "img": "/assets/img/providers/provider-rsg.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "YGR",
+          "img": "/assets/img/providers/provider-ygr.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "Mega888",
+          "img": "/assets/img/providers/provider-mega88.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "King Midas",
+          "img": "/assets/img/providers/provider-king-midas.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "AskMeSlot",
+          "img": "/assets/img/providers/provider-ams.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "Pragmatic Play Pop",
+          "img": "/assets/img/providers/provider-pragmatic-play-pop.webp",
+          "w": 280,
+          "h": 359
+        }
       ]
     },
     {
       "id": "live",
       "labelBn": "লাইভ ক্যাসিনো",
       "providers": [
-        "Evolution",
-        "AE Sexy",
-        "Pragmatic Play Live",
-        "Big Gaming"
+        {
+          "name": "Evolution",
+          "img": "/assets/img/providers/provider-evolution.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "AE Sexy",
+          "img": "/assets/img/providers/provider-ae-sexy.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "Pragmatic Play Live",
+          "img": "/assets/img/providers/provider-pragmatic-play-live.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "Big Gaming",
+          "img": "/assets/img/providers/provider-big-gaming.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "Hot Road",
+          "img": "/assets/img/providers/provider-hot-road.webp",
+          "w": 280,
+          "h": 359
+        }
       ]
     },
     {
       "id": "sports",
       "labelBn": "স্পোর্টস ও ই-স্পোর্টস",
       "providers": [
-        "SBOBET",
-        "MaxBet",
-        "CMD368",
-        "E1 Sport"
+        {
+          "name": "SBOBET",
+          "img": "/assets/img/providers/provider-sbobet.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "MaxBet",
+          "img": "/assets/img/providers/provider-maxbet.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "CMD368",
+          "img": "/assets/img/providers/provider-cmd368.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "E1 Sport",
+          "img": "/assets/img/providers/provider-e1-sport.webp",
+          "w": 280,
+          "h": 359
+        }
       ]
     },
     {
       "id": "lotteryRacing",
       "labelBn": "লটারি ও রেসিং",
       "providers": [
-        "Ekor",
-        "Hot Road",
-        "Gogoli Track"
+        {
+          "name": "Ekor",
+          "img": "/assets/img/providers/provider-ekor.webp",
+          "w": 280,
+          "h": 359
+        },
+        {
+          "name": "Gogoli",
+          "img": "/assets/img/providers/provider-gogoli-track.webp",
+          "w": 280,
+          "h": 359
+        }
       ]
     }
   ],

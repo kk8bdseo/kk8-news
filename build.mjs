@@ -56,22 +56,30 @@ const moneyUrl = () => cfg.moneySite + (cfg.moneySiteParams || '');
 
 /* ------------------------------------------------------- computed fragments */
 
-const providerChips = (names) => names.map((n) =>
-  `<li class="flex items-center justify-center rounded-base border border-brand-hair bg-white px-3 py-2.5 text-center text-sm font-semibold text-brand-navy">${esc(n)}</li>`
-).join('\n');
+/** KK8's own provider cards (name + category label printed on the art). Lazy: every
+ *  provider list sits below the fold. width/height reserve space, so nothing shifts. */
+const providerCard = (p, g, liClass) => `<li class="${liClass}">
+      <img src="${p.img}" alt="${esc(p.name)} — ${esc(g.labelBn)} প্রোভাইডার" width="${p.w}" height="${p.h}"
+           loading="lazy" decoding="async" class="block h-auto w-full">
+    </li>`;
 
-/** One category's providers as a chip list, for the page about that category. */
+/** One category's providers as a grid, for the page about that category. */
 function providerGroup(id) {
   const g = (cfg.providerGroups || []).find((x) => x.id === id);
-  return g ? `<ul class="not-prose my-6 grid grid-cols-2 gap-2 sm:grid-cols-4">\n${providerChips(g.providers)}\n</ul>` : '';
+  if (!g) return '';
+  return `<ul class="not-prose my-6 grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-6">
+    ${g.providers.map((p) => providerCard(p, g, '')).join('\n    ')}
+  </ul>`;
 }
 
-/** Every verified provider, grouped by category — the homepage overview. */
+/** Every provider, grouped — the homepage overview. Mobile: one swipeable rail per
+ *  category with the next card peeking in. Desktop: wraps into a grid, since sideways
+ *  scrolling with a mouse is awkward. */
 function providerGrid() {
-  return (cfg.providerGroups || []).map((g) => `<div>
+  return (cfg.providerGroups || []).map((g) => `<div class="min-w-0">
     <p class="text-xs font-bold uppercase tracking-widest text-brand-blue">${esc(g.labelBn)} <span class="text-brand-slate">· ${g.providers.length}</span></p>
-    <ul class="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-6">
-${providerChips(g.providers)}
+    <ul class="carousel-track mt-3 flex snap-x gap-3 overflow-x-auto pb-1 lg:grid lg:grid-cols-9 lg:overflow-visible">
+    ${g.providers.map((p) => providerCard(p, g, 'w-[112px] shrink-0 snap-start lg:w-auto')).join('\n    ')}
     </ul>
   </div>`).join('\n');
 }
@@ -95,30 +103,17 @@ function categoryGrid() {
   ).join('\n');
 }
 
-/** Featured game cards. Titles and providers are verified; thumbnails are NOT
- *  copied or hotlinked from the operator, so each card uses a typographic tile
- *  built from brand tokens. Keeps the grid fast and CLS-free. */
+/** Featured games: KK8's own game-card art, self-hosted (never hotlinked) with client
+ *  approval. Lazy-loaded; width/height reserve the slot so the grid never shifts. */
 function gameGrid() {
-  const ramps = [
-    'from-brand-navy to-brand-blue',
-    'from-brand-blue to-brand-bright',
-    'from-brand-bright to-brand-navy',
-  ];
-  return cfg.featuredGames.map((g, i) => {
-    const initials = g.name.split(/\s+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
-    return `<li>
-      <a href="${moneyUrl()}" rel="nofollow noopener" target="_blank"
-         class="group block overflow-hidden rounded-base border border-brand-hair bg-white transition hover:border-brand-blue hover:shadow-md">
-        <div class="flex h-24 items-center justify-center bg-gradient-to-br ${ramps[i % ramps.length]}">
-          <span class="text-2xl font-black tracking-tight text-white/90" aria-hidden="true">${initials}</span>
-        </div>
-        <div class="p-3">
-          <p class="truncate text-sm font-bold text-brand-navy" title="${esc(g.name)}">${esc(g.name)}</p>
-          <p class="mt-0.5 text-xs text-brand-slate">${esc(g.provider)}</p>
-        </div>
+  return cfg.featuredGames.map((g) => `<li>
+      <a href="${moneyUrl()}" rel="nofollow noopener" target="_blank" class="group block">
+        <img src="${g.img}" alt="${esc(g.name)} — ${esc(g.provider)}-এর স্লট গেম" width="${g.w}" height="${g.h}"
+             loading="lazy" decoding="async" class="block h-auto w-full transition duration-200 group-hover:-translate-y-1">
+        <p class="mt-1 truncate text-center text-sm font-bold text-brand-navy" title="${esc(g.name)}">${esc(g.name)}</p>
+        <p class="text-center text-xs text-brand-slate">${esc(g.provider)}</p>
       </a>
-    </li>`;
-  }).join('\n');
+    </li>`).join('\n');
 }
 
 function trustMarks() {
