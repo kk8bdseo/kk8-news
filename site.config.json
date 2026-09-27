@@ -17,7 +17,7 @@
     "authorityBn": "কুরাসাও",
     "text": "Master License of Gaming Services Provider, N.V.",
     "number": "#365/JAZ",
-    "verifiedOn": "2026-09-24"
+    "verifiedOn": "2026-09-27"
   },
   "trustMarks": [
     "Gaming Curaçao",
@@ -60,7 +60,7 @@
       "category": "স্লট"
     },
     {
-      "name": "Monkey King",
+      "name": "JILI",
       "category": "স্লট"
     },
     {
@@ -68,7 +68,7 @@
       "category": "স্লট"
     },
     {
-      "name": "King Midas",
+      "name": "Monkey King",
       "category": "স্লট"
     },
     {
@@ -76,15 +76,95 @@
       "category": "স্লট"
     },
     {
+      "name": "NextSpin",
+      "category": "স্লট"
+    },
+    {
       "name": "BNG",
       "category": "স্লট"
     },
     {
+      "name": "FaChai",
+      "category": "স্লট"
+    },
+    {
+      "name": "CQ9",
+      "category": "স্লট"
+    },
+    {
+      "name": "Red Tiger",
+      "category": "স্লট"
+    },
+    {
+      "name": "RSG",
+      "category": "স্লট"
+    },
+    {
+      "name": "YGR",
+      "category": "স্লট"
+    },
+    {
+      "name": "Mega88",
+      "category": "স্লট"
+    },
+    {
+      "name": "King Midas",
+      "category": "স্লট"
+    },
+    {
+      "name": "AMS",
+      "category": "স্লট"
+    },
+    {
+      "name": "Pragmatic Play Pop",
+      "category": "স্লট"
+    },
+    {
+      "name": "Evolution",
+      "category": "লাইভ ক্যাসিনো"
+    },
+    {
       "name": "AE Sexy",
       "category": "লাইভ ক্যাসিনো"
+    },
+    {
+      "name": "Pragmatic Play Live",
+      "category": "লাইভ ক্যাসিনো"
+    },
+    {
+      "name": "Big Gaming",
+      "category": "লাইভ ক্যাসিনো"
+    },
+    {
+      "name": "SBOBET",
+      "category": "স্পোর্টস ও ই-স্পোর্টস"
+    },
+    {
+      "name": "MaxBet",
+      "category": "স্পোর্টস ও ই-স্পোর্টস"
+    },
+    {
+      "name": "CMD368",
+      "category": "স্পোর্টস ও ই-স্পোর্টস"
+    },
+    {
+      "name": "E1 Sport",
+      "category": "স্পোর্টস ও ই-স্পোর্টস"
+    },
+    {
+      "name": "Ekor",
+      "category": "লটারি ও রেসিং"
+    },
+    {
+      "name": "Hot Road",
+      "category": "লটারি ও রেসিং"
+    },
+    {
+      "name": "Gogoli Track",
+      "category": "লটারি ও রেসিং"
     }
   ],
-  "providersSource": "Observed on kk8official.com homepage game cards and promotion names, verified 2026-09-24. Narrower than CLAUDE.md §8 by design — only what was actually seen is asserted.",
+  "providersSource": "All 30 providers verified live on kk8official.com/my/ via their 'Play <name>' image alts, 2026-09-27 (the rail lazy-loads below the fold — the 2026-09-24 check missed it by not scrolling, which is why that list was only 8). 28 are listed; SV388 and RCB988 are omitted deliberately: both are cockfighting-betting providers, which a Bangladesh brand property has no reason to promote.",
   "productCategories": [
     {
       "id": "slots",
@@ -129,7 +209,7 @@
     "descBn": "বাংলাদেশের ইমোশনাল সাপোর্ট ও ক্রাইসিস হেল্পলাইন"
   },
   "minAge": 18,
-  "lastVerified": "2026-09-24",
+  "lastVerified": "2026-09-27",
   "siteKey": "review",
   "role": "editorial",
   "domain": "kk8.news",
@@ -167,7 +247,7 @@
         "id": "games",
         "labelBn": "গেম ও প্রোভাইডার",
         "score": 4.5,
-        "noteBn": "Pragmatic Play, Lucky365, JDB, Monkey King ও AE Sexy — প্রথম সারির প্রোভাইডার সরাসরি যাচাই করা হয়েছে।"
+        "noteBn": "২৮টি প্রোভাইডার সরাসরি যাচাই করা হয়েছে — Pragmatic Play, Evolution, JILI, Red Tiger ও SBOBET-এর মতো প্রথম সারির নামসহ।"
       },
       {
         "id": "payments",
@@ -247,5 +327,63 @@
       "provider": "BNG"
     }
   ],
-  "featuredGamesSource": "Observed in the 'Hot Games' rail on kk8official.com, verified 2026-09-24. Titles and providers only — no thumbnails are copied or hotlinked."
+  "featuredGamesSource": "Observed in the 'Hot Games' rail on kk8official.com, verified 2026-09-24. Titles and providers only — no thumbnails are copied or hotlinked.",
+  "providerGroups": [
+    {
+      "id": "slots",
+      "labelBn": "স্লট",
+      "providers": [
+        "Pragmatic Play",
+        "Lucky365",
+        "JILI",
+        "JDB",
+        "Monkey King",
+        "Microslot",
+        "NextSpin",
+        "BNG",
+        "FaChai",
+        "CQ9",
+        "Red Tiger",
+        "RSG",
+        "YGR",
+        "Mega88",
+        "King Midas",
+        "AMS",
+        "Pragmatic Play Pop"
+      ]
+    },
+    {
+      "id": "live",
+      "labelBn": "লাইভ ক্যাসিনো",
+      "providers": [
+        "Evolution",
+        "AE Sexy",
+        "Pragmatic Play Live",
+        "Big Gaming"
+      ]
+    },
+    {
+      "id": "sports",
+      "labelBn": "স্পোর্টস ও ই-স্পোর্টস",
+      "providers": [
+        "SBOBET",
+        "MaxBet",
+        "CMD368",
+        "E1 Sport"
+      ]
+    },
+    {
+      "id": "lotteryRacing",
+      "labelBn": "লটারি ও রেসিং",
+      "providers": [
+        "Ekor",
+        "Hot Road",
+        "Gogoli Track"
+      ]
+    }
+  ],
+  "providersExcluded": {
+    "SV388": "cockfighting betting",
+    "RCB988": "cockfighting betting"
+  }
 }

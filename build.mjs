@@ -56,10 +56,24 @@ const moneyUrl = () => cfg.moneySite + (cfg.moneySiteParams || '');
 
 /* ------------------------------------------------------- computed fragments */
 
+const providerChips = (names) => names.map((n) =>
+  `<li class="flex items-center justify-center rounded-base border border-brand-hair bg-white px-3 py-2.5 text-center text-sm font-semibold text-brand-navy">${esc(n)}</li>`
+).join('\n');
+
+/** One category's providers as a chip list, for the page about that category. */
+function providerGroup(id) {
+  const g = (cfg.providerGroups || []).find((x) => x.id === id);
+  return g ? `<ul class="not-prose my-6 grid grid-cols-2 gap-2 sm:grid-cols-4">\n${providerChips(g.providers)}\n</ul>` : '';
+}
+
+/** Every verified provider, grouped by category — the homepage overview. */
 function providerGrid() {
-  return cfg.providers.map((p) =>
-    `<li class="flex items-center justify-center rounded-base border border-brand-hair bg-white px-4 py-3 text-sm font-semibold text-brand-navy">${esc(p.name)}</li>`
-  ).join('\n');
+  return (cfg.providerGroups || []).map((g) => `<div>
+    <p class="text-xs font-bold uppercase tracking-widest text-brand-blue">${esc(g.labelBn)} <span class="text-brand-slate">· ${g.providers.length}</span></p>
+    <ul class="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-6">
+${providerChips(g.providers)}
+    </ul>
+  </div>`).join('\n');
 }
 
 function paymentList() {
@@ -305,6 +319,8 @@ for (const page of pages) {
     content: '',
     nav: navLinks(page.slug),
     providerGrid: providerGrid(),
+    providerCount: (cfg.providers || []).length,
+    providerGroups: Object.fromEntries((cfg.providerGroups || []).map((g) => [g.id, providerGroup(g.id)])),
     paymentList: paymentList(),
     categoryGrid: categoryGrid(),
     trustMarks: trustMarks(),
