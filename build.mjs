@@ -211,11 +211,8 @@ function schemaBlocks(page) {
     name: cfg.siteName, alternateName: cfg.siteNameBn, url: cfg.baseUrl,
     inLanguage: cfg.hreflang,
     publisher: { '@type': 'Organization', name: cfg.brand },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: { '@type': 'EntryPoint', urlTemplate: `${cfg.baseUrl}/faq.html?q={search_term_string}` },
-      'query-input': 'required name=search_term_string',
-    },
+    // No SearchAction: neither site has a search, and Google retired the sitelinks
+    // search box. Declaring one would be a schema-only claim (CLAUDE.md §9).
   });
 
   if (page.schema.includes('Article')) out.push({

@@ -43,7 +43,8 @@
       "schema": [
         "Organization",
         "WebSite",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "FAQPage"
       ],
       "bdVolume": 50,
       "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"

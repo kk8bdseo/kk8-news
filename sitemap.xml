@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://kk8.news/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8.news/"/>
+  </url>
+  <url>
     <loc>https://kk8.news/kk8-review.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
