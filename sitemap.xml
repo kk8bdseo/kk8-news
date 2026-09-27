@@ -2,11 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://kk8.news/login-guide.html</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8.news/login-guide.html"/>
+  </url>
+  <url>
     <loc>https://kk8.news/</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8.news/"/>
+  </url>
+  <url>
+    <loc>https://kk8.news/app-download-guide.html</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8.news/app-download-guide.html"/>
   </url>
   <url>
     <loc>https://kk8.news/kk8-review.html</loc>
@@ -21,6 +35,27 @@
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8.news/is-kk8-legit.html"/>
+  </url>
+  <url>
+    <loc>https://kk8.news/registration-guide.html</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8.news/registration-guide.html"/>
+  </url>
+  <url>
+    <loc>https://kk8.news/deposit-guide.html</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8.news/deposit-guide.html"/>
+  </url>
+  <url>
+    <loc>https://kk8.news/withdrawal-guide.html</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8.news/withdrawal-guide.html"/>
   </url>
   <url>
     <loc>https://kk8.news/spot-fake-kk8-sites.html</loc>
