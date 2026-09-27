@@ -320,7 +320,8 @@
       "schema": [
         "Article",
         "Review",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "FAQPage"
       ],
       "bdVolume": 0,
       "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25",
