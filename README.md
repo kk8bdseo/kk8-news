@@ -77,6 +77,7 @@ publish a page that quietly loses its ranking.
 8. `lang="bn"`; hreflang self-referencing only, never cross-domain
 9. No body paragraph is duplicated on the sister property
 10. No MYR/RM figures, no Malaysian payment rails, no Bangladesh legality claim
+11. No primary keyword is targeted twice — on this site or across both sites
 
 If a gate fails it names the page and the rule. Fix the source, rebuild.
 

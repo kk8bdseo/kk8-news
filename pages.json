@@ -3,14 +3,15 @@
     {
       "slug": "login-guide",
       "template": "guide",
-      "tier": 2,
+      "tier": 3,
       "pageClass": "guide",
       "priority": "0.8",
       "changefreq": "monthly",
-      "primaryKeyword": "kk8 log in",
+      "primaryKeyword": "kk8 login problem",
       "secondary": [
-        "kk8 login password",
-        "kk8 login app"
+        "kk8 log in",
+        "kk8 password reset",
+        "kk8 account locked"
       ],
       "title": "KK8 লগইন গাইড — সমস্যা ও সমাধান | বাংলাদেশ",
       "h1": "KK8 লগইন গাইড — অ্যাক্সেস, সমস্যা ও সমাধান",
@@ -20,8 +21,9 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "bdVolume": 90,
-      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
+      "bdVolume": 0,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25",
+      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8.site (gate 10)."
     },
     {
       "slug": "index",
@@ -49,14 +51,14 @@
     {
       "slug": "app-download-guide",
       "template": "guide",
-      "tier": 2,
+      "tier": 3,
       "pageClass": "guide",
       "priority": "0.8",
       "changefreq": "monthly",
-      "primaryKeyword": "kk8 apk",
+      "primaryKeyword": "kk8 apk safe",
       "secondary": [
         "kk8 apk download latest version",
-        "kk8 apps download"
+        "fake kk8 apk"
       ],
       "title": "KK8 অ্যাপ ডাউনলোড গাইড — APK নিরাপত্তা | বাংলাদেশ",
       "h1": "KK8 অ্যাপ ডাউনলোড গাইড — APK ও iOS, নিরাপদে",
@@ -66,8 +68,9 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "bdVolume": 30,
-      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
+      "bdVolume": 0,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25",
+      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8.site (gate 10)."
     },
     {
       "slug": "faq",
@@ -76,8 +79,11 @@
       "pageClass": "support",
       "priority": "0.6",
       "changefreq": "monthly",
-      "primaryKeyword": "kk8 info",
-      "secondary": [],
+      "primaryKeyword": "kk8 help",
+      "secondary": [
+        "kk8 questions",
+        "kk8 faq bangladesh"
+      ],
       "title": "KK8 FAQ — প্রশ্ন ও উত্তর | KK8 Review BD",
       "h1": "KK8 FAQ — বাংলাদেশ প্লেয়ারদের প্রশ্নের উত্তর",
       "meta": "KK8 নিয়ে সবচেয়ে বেশি জিজ্ঞাসিত প্রশ্ন ও স্বাধীন উত্তর — বিশ্বস্ততা, লাইসেন্স, পেমেন্ট, উইথড্র, অ্যাপ ও সাপোর্ট।",
@@ -86,8 +92,9 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "bdVolume": 20,
-      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
+      "bdVolume": 0,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25",
+      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8.site (gate 10)."
     },
     {
       "slug": "bonus-review",
@@ -96,9 +103,10 @@
       "pageClass": "review",
       "priority": "0.6",
       "changefreq": "weekly",
-      "primaryKeyword": "kk8 free credit",
+      "primaryKeyword": "kk8 bonus",
       "secondary": [
-        "kk8 bonus"
+        "kk8 bonus terms",
+        "kk8 turnover"
       ],
       "title": "KK8 বোনাস রিভিউ — অফার ও শর্ত বিশ্লেষণ | বাংলাদেশ",
       "h1": "KK8 বোনাস ও প্রোমো রিভিউ — সত্যিই কি লাভজনক?",
@@ -109,8 +117,9 @@
         "BreadcrumbList",
         "FAQPage"
       ],
-      "bdVolume": 10,
-      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
+      "bdVolume": 0,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25",
+      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8.site (gate 10)."
     },
     {
       "slug": "games-software",
@@ -119,9 +128,10 @@
       "pageClass": "support",
       "priority": "0.6",
       "changefreq": "monthly",
-      "primaryKeyword": "kk8 game",
+      "primaryKeyword": "kk8 game provider",
       "secondary": [
-        "kk8 slot"
+        "kk8 slot provider",
+        "kk8 live casino provider"
       ],
       "title": "KK8 গেম ও সফটওয়্যার — প্রোভাইডার বিশ্লেষণ | বাংলাদেশ",
       "h1": "KK8 গেম ও সফটওয়্যার — প্রোভাইডার ও ক্যাটাগরি",
@@ -130,8 +140,9 @@
         "Article",
         "BreadcrumbList"
       ],
-      "bdVolume": 10,
-      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
+      "bdVolume": 0,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25",
+      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8.site (gate 10)."
     },
     {
       "slug": "news",
@@ -140,9 +151,10 @@
       "pageClass": "support",
       "priority": "0.6",
       "changefreq": "weekly",
-      "primaryKeyword": "kk8 live",
+      "primaryKeyword": "kk8 news",
       "secondary": [
-        "kk8 news"
+        "kk8 update",
+        "kk8 sponsor"
       ],
       "title": "KK8 নিউজ ও আপডেট | KK8 Review BD",
       "h1": "KK8 নিউজ ও আপডেট",
@@ -151,8 +163,9 @@
         "Article",
         "BreadcrumbList"
       ],
-      "bdVolume": 10,
-      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
+      "bdVolume": 0,
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25",
+      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8.site (gate 10)."
     },
     {
       "slug": "kk8-review",
@@ -173,24 +186,6 @@
         "Review",
         "BreadcrumbList",
         "FAQPage"
-      ],
-      "faq": [
-        {
-          "q": "KK8 কি নির্ভরযোগ্য?",
-          "a": "লাইসেন্স (#365/JAZ), স্বাধীন টেস্টিং সার্টিফিকেশন এবং প্রথম সারির প্রোভাইডারের উপস্থিতি — এই তিনটি যাচাইযোগ্য সংকেত ইতিবাচক। তবে কুরাসাও লাইসেন্সে প্লেয়ার-প্রতিকারের কাঠামো ইউরোপীয় নিয়ন্ত্রকদের তুলনায় শিথিল, যা বিবেচনায় রাখা উচিত।"
-        },
-        {
-          "q": "বাংলাদেশ থেকে কি বাংলা ভাষায় খেলা যায়?",
-          "a": "যাচাইয়ের সময় অফিসিয়াল প্ল্যাটফর্মে বাংলা ভাষার সংস্করণ পাওয়া যায়নি; ইন্টারফেস ইংরেজিতে। এটিই বর্তমানে বাংলাদেশি প্লেয়ারদের জন্য সবচেয়ে বড় সীমাবদ্ধতা।"
-        },
-        {
-          "q": "এই রিভিউতে বোনাসের অঙ্ক কেন নেই?",
-          "a": "কারণ বাংলাদেশি টাকায় নির্দিষ্ট কোনো অফার এখনও অফিসিয়ালভাবে ঘোষিত হয়নি। প্রকাশিত অফারগুলো ব্র্যান্ডের বিদ্যমান বাজারের মুদ্রায় দেওয়া। অঘোষিত অঙ্ক লেখা মানে ভুল প্রত্যাশা তৈরি করা।"
-        },
-        {
-          "q": "উইথড্র আটকে গেলে সাধারণ কারণ কী?",
-          "a": "সবচেয়ে সাধারণ কারণ দুটি — অসম্পূর্ণ অ্যাকাউন্ট ভেরিফিকেশন, এবং অ্যাকাউন্টের নাম ও মোবাইল ওয়ালেটের নাম না মেলা। বোনাস নেওয়া থাকলে টার্নওভার শর্ত পূরণ না হওয়াও একটি কারণ।"
-        }
       ],
       "bdVolume": 0,
       "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
@@ -225,8 +220,11 @@
       "pageClass": "guide",
       "priority": "0.4",
       "changefreq": "monthly",
-      "primaryKeyword": "kk8 register",
-      "secondary": [],
+      "primaryKeyword": "how to register kk8",
+      "secondary": [
+        "kk8 registration",
+        "kk8 sign up bangladesh"
+      ],
       "title": "KK8 রেজিস্ট্রেশন গাইড — ধাপে ধাপে | বাংলাদেশ",
       "h1": "KK8 রেজিস্ট্রেশন গাইড — ধাপে ধাপে অ্যাকাউন্ট খোলা",
       "meta": "KK8-এ অ্যাকাউন্ট খোলার সম্পূর্ণ গাইড — প্রয়োজনীয় তথ্য, ভেরিফিকেশন, সাধারণ ভুল ও নিরাপত্তা পরামর্শ বাংলাদেশ প্লেয়ারদের জন্য।",
@@ -236,7 +234,8 @@
         "FAQPage"
       ],
       "bdVolume": 0,
-      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25",
+      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8.site (gate 10)."
     },
     {
       "slug": "deposit-guide",
@@ -245,8 +244,11 @@
       "pageClass": "guide",
       "priority": "0.4",
       "changefreq": "monthly",
-      "primaryKeyword": "kk8 deposit",
-      "secondary": [],
+      "primaryKeyword": "kk8 bkash deposit",
+      "secondary": [
+        "kk8 nagad deposit",
+        "kk8 rocket deposit"
+      ],
       "title": "KK8 ডিপোজিট গাইড — বিকাশ, নগদ, রকেট | বাংলাদেশ",
       "h1": "KK8 ডিপোজিট গাইড — বিকাশ, নগদ ও রকেট দিয়ে",
       "meta": "KK8-এ ডিপোজিট করার গাইড — বিকাশ, নগদ ও রকেট। ধাপে ধাপে নির্দেশনা, নিরাপত্তা যাচাই ও সাধারণ সমস্যার সমাধান।",
@@ -256,7 +258,8 @@
         "FAQPage"
       ],
       "bdVolume": 0,
-      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25",
+      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8.site (gate 10)."
     },
     {
       "slug": "withdrawal-guide",
@@ -304,8 +307,11 @@
       "pageClass": "review",
       "priority": "0.4",
       "changefreq": "monthly",
-      "primaryKeyword": "kk8 customer service",
-      "secondary": [],
+      "primaryKeyword": "kk8 customer care",
+      "secondary": [
+        "kk8 live chat",
+        "kk8 support review"
+      ],
       "title": "KK8 কাস্টমার সাপোর্ট রিভিউ — সাড়া ও মান | বাংলাদেশ",
       "h1": "KK8 কাস্টমার সাপোর্ট রিভিউ — চ্যানেল, সাড়া ও মান",
       "meta": "KK8 customer service কতটা কার্যকর? লাইভ চ্যাট, টেলিগ্রাম ও সোশ্যাল চ্যানেলের উপলব্ধতা ও সাড়ার বিশ্লেষণ — বাংলাদেশ দৃষ্টিকোণ।",
@@ -315,7 +321,8 @@
         "BreadcrumbList"
       ],
       "bdVolume": 0,
-      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25",
+      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8.site (gate 10)."
     },
     {
       "slug": "player-ratings",
@@ -324,8 +331,11 @@
       "pageClass": "support",
       "priority": "0.4",
       "changefreq": "weekly",
-      "primaryKeyword": "kk8 review",
-      "secondary": [],
+      "primaryKeyword": "kk8 player review",
+      "secondary": [
+        "kk8 user review",
+        "kk8 testimonials"
+      ],
       "title": "KK8 প্লেয়ার রেটিং ও ইউজার রিভিউ | বাংলাদেশ",
       "h1": "KK8 প্লেয়ার রেটিং ও ইউজার রিভিউ",
       "meta": "KK8 নিয়ে প্লেয়ারদের অভিজ্ঞতা কী বলে — রেটিং পদ্ধতি, সাধারণ প্রশংসা ও অভিযোগের ধরন। বাংলাদেশ প্লেয়ারদের জন্য সারসংক্ষেপ।",
@@ -334,7 +344,8 @@
         "BreadcrumbList"
       ],
       "bdVolume": 0,
-      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25",
+      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8.site (gate 10)."
     },
     {
       "slug": "spot-fake-kk8-sites",
@@ -343,10 +354,11 @@
       "pageClass": "trust",
       "priority": "0.4",
       "changefreq": "monthly",
-      "primaryKeyword": "kk8 official",
+      "primaryKeyword": "fake kk8 site",
       "secondary": [
-        "kk8 official site",
-        "kk8.com"
+        "kk8 clone",
+        "kk8 official site check",
+        "kk8 scam"
       ],
       "title": "ভুয়া KK8 সাইট চেনার উপায় — ক্লোন সতর্কতা | বাংলাদেশ",
       "h1": "ভুয়া KK8 সাইট চেনার উপায় — ক্লোন ডোমেইন সতর্কতা",
@@ -357,7 +369,8 @@
         "FAQPage"
       ],
       "bdVolume": 0,
-      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25"
+      "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25",
+      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8.site (gate 10)."
     }
   ]
 }

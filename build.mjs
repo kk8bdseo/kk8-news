@@ -171,6 +171,19 @@ function scorecard() {
   </div>`;
 }
 
+/** FAQ items read off the rendered page (faq-q button + its faq-a panel). The page is
+ *  the single source of truth, so FAQPage schema can never drift from what visitors
+ *  see — CLAUDE.md §9's "no schema-only claims". */
+function extractFaq(html) {
+  const strip = (s) => s.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  const out = [];
+  for (const [, id, q] of html.matchAll(/<button\b[^>]*class="faq-q"[^>]*aria-controls="([^"]+)"[^>]*>([\s\S]*?)<\/button>/g)) {
+    const a = html.match(new RegExp(`<div id="${id}" class="faq-a">([\\s\\S]*?)<\\/div>`));
+    if (a) out.push({ q: strip(q.replace(/<span[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/span>/g, '')), a: strip(a[1]) });
+  }
+  return out;
+}
+
 /* ------------------------------------------------------------------ schema */
 
 function schemaBlocks(page) {
@@ -310,7 +323,7 @@ for (const page of pages) {
     ...cfg,
     page,
     head: head(page),
-    schema: schemaBlocks(page),
+    schema: '',
     content: '',
     nav: navLinks(page.slug),
     providerGrid: providerGrid(),
@@ -327,6 +340,9 @@ for (const page of pages) {
   };
 
   let content = tokens(includes(read(src)), ctx, page.slug);
+  const onPageFaq = extractFaq(content);
+  if (onPageFaq.length) page.faq = onPageFaq;
+  ctx.schema = schemaBlocks(page);
   ctx.toc = toc(content);
 
   const shell = `partials/shell-${page.template}.html`;
@@ -448,6 +464,25 @@ for (const { page, html, out } of built) {
   }
   if (/(বাংলাদেশে\s+(?:এটি\s+)?বৈধ|আইনত\s+বৈধ|legal\s+in\s+Bangladesh)/i.test(text))
     fail(out, 9, 'appears to claim gambling is legal in Bangladesh');
+}
+
+// 10 — a primary keyword may be targeted by exactly one page across BOTH properties.
+//      Two pages on one query compete for one slot; that is the collapse the two-site
+//      architecture exists to prevent (spec §5.1).
+{
+  const mine = new Map();
+  for (const p of pages) {
+    const k = p.primaryKeyword.toLowerCase().trim();
+    if (mine.has(k)) fail(`${p.slug}.html`, 10, `primary keyword "${k}" also targeted by ${mine.get(k)}.html on this site`);
+    mine.set(k, p.slug);
+  }
+  const theirsFile = join(ROOT, '..', cfg.siteKey === 'seo' ? 'kk8-news' : 'kk8-site', 'pages.json');
+  if (existsSync(theirsFile)) {
+    for (const p of JSON.parse(readFileSync(theirsFile, 'utf8')).pages) {
+      const k = p.primaryKeyword.toLowerCase().trim();
+      if (mine.has(k)) fail(`${mine.get(k)}.html`, 10, `primary keyword "${k}" also targeted by the sister property (${p.slug})`);
+    }
+  }
 }
 
 // 8 — cross-property duplicate body copy
