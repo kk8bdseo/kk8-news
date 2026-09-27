@@ -72,6 +72,17 @@ function providerGroup(id) {
   </ul>`;
 }
 
+/** Editorial provider table. The hub shows providers as text, not KK8's card art:
+ *  the art lives on kk8.site, and a table keeps this property visually its own. */
+function providerTable() {
+  return `<table class="data-table my-6">
+  <thead><tr><th>ক্যাটাগরি</th><th>সংখ্যা</th><th>প্রোভাইডার</th></tr></thead>
+  <tbody>
+${(cfg.providerGroups || []).map((g) => `    <tr><td><strong>${esc(g.labelBn)}</strong></td><td>${g.providers.length}</td><td>${g.providers.map((p) => esc(p.name)).join(', ')}</td></tr>`).join('\n')}
+  </tbody>
+</table>`;
+}
+
 /** Every provider, grouped — the homepage overview. Mobile: one swipeable rail per
  *  category with the next card peeking in. Desktop: wraps into a grid, since sideways
  *  scrolling with a mouse is awkward. */
@@ -328,6 +339,7 @@ for (const page of pages) {
     nav: navLinks(page.slug),
     providerGrid: providerGrid(),
     providerCount: (cfg.providers || []).length,
+    providerTable: providerTable(),
     providerGroups: Object.fromEntries((cfg.providerGroups || []).map((g) => [g.id, providerGroup(g.id)])),
     paymentList: paymentList(),
     categoryGrid: categoryGrid(),
