@@ -246,7 +246,10 @@ function schemaBlocks(page) {
     },
     reviewRating: {
       '@type': 'Rating',
-      ratingValue: cfg.editorialRating.overall,
+      // Focused reviews (bonus, support) rate their own criterion, not the overall score.
+      ratingValue: page.ratingCriterion
+        ? cfg.editorialRating.criteria.find((c) => c.id === page.ratingCriterion).score
+        : cfg.editorialRating.overall,
       bestRating: cfg.editorialRating.best,
       worstRating: 1,
     },
@@ -455,6 +458,14 @@ for (const { page, html, out } of built) {
   for (const [, hl, href] of html.matchAll(/<link rel="alternate" hreflang="([^"]*)" href="([^"]*)"/g)) {
     if (!href.startsWith(cfg.baseUrl))
       fail(out, 7, `hreflang "${hl}" points off-domain (${href}) — declares the two properties duplicates`);
+  }
+
+  // 11 — structural tags balance. An unclosed <button> or <div> silently swallows the
+  //      rest of an FAQ block, and the FAQ schema extracted from it goes wrong with it.
+  for (const tag of ['div', 'section', 'button', 'ul', 'ol', 'li', 'table', 'tr', 'a', 'h1', 'h2', 'h3', 'p', 'nav', 'aside']) {
+    const open = (html.match(new RegExp(`<${tag}(?=[\\s>])`, 'g')) || []).length;
+    const close = (html.match(new RegExp(`</${tag}>`, 'g')) || []).length;
+    if (open !== close) fail(out, 11, `<${tag}> opened ${open}× but closed ${close}×`);
   }
 
   // 9 — no Malaysia leakage, no Bangladesh legality claim

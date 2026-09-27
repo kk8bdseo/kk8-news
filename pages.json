@@ -119,7 +119,8 @@
       ],
       "bdVolume": 0,
       "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25",
-      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8.site (gate 10)."
+      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8.site (gate 10).",
+      "ratingCriterion": "bonus"
     },
     {
       "slug": "games-software",
@@ -322,7 +323,8 @@
       ],
       "bdVolume": 0,
       "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25",
-      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8.site (gate 10)."
+      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8.site (gate 10).",
+      "ratingCriterion": "support"
     },
     {
       "slug": "player-ratings",

@@ -519,5 +519,27 @@
   "providersExcluded": {
     "SV388": "cockfighting betting",
     "RCB988": "cockfighting betting"
-  }
+  },
+  "verificationLog": [
+    {
+      "date": "2026-09-27",
+      "item": "Clone domains kk8.run, kk8bd.net",
+      "finding": "Both titled 'kk8 …'; host their own /register and /login forms that POST to their own domain; no outbound redirect; KK8 licence #365/JAZ not shown. The proposal's 'redirects to rival platforms' was NOT observed."
+    },
+    {
+      "date": "2026-09-27",
+      "item": "Lookalike domains",
+      "finding": "kkx8.ws, kkx8.bet, kxn8.bet, kk88.cash, kk88bd.com, kk8x.bet self-identify as kkx8 / kxn8 / KK88 / kk8x — separate brands. None shows #365/JAZ."
+    },
+    {
+      "date": "2026-09-27",
+      "item": "Tottenham 'Official Asian Sponsor' (KK8 banner)",
+      "finding": "NOT confirmed. \"KK8\" site:tottenhamhotspur.com returns nothing; Tottenham announced VSbet as official regional partner on 2026-08-27. Do not repeat on this property."
+    },
+    {
+      "date": "2026-09-27",
+      "item": "BWF World Tour 'Official Sponsor' (KK8 banner)",
+      "finding": "NOT confirmed. BWF commercial-partners page (updated 2026-07-31) lists BK8, not KK8; claim appears only on KK8's own sites. Do not repeat on this property."
+    }
+  ]
 }
