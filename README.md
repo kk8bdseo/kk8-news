@@ -161,4 +161,5 @@ assets/img/          self-hosted brand assets (never hotlink the operator's)
 sitemap.xml          generated from pages.json
 robots.txt           generated
 CNAME                custom domain for GitHub Pages
+_config.yml          keeps sources (pages/, partials/, pages.json …) off the published site
 ```

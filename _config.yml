@@ -1,0 +1,16 @@
+# GitHub Pages publishes the repo root. Only the built site belongs on the web:
+# the sources below would otherwise be served — pages/*.html as unrendered
+# duplicates of every page, pages.json as the keyword plan.
+# Files without front matter (all built HTML) are copied verbatim, never templated.
+exclude:
+  - pages
+  - partials
+  - src
+  - build.mjs
+  - pages.json
+  - site.config.json
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
+  - README.md
+  - node_modules
