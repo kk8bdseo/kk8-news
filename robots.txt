@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://kk8.news/sitemap.xml
+# Preview: every page is noindex until launch (site.config.json "indexing").

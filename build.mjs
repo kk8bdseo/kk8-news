@@ -12,10 +12,17 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const cfg = JSON.parse(readFileSync(join(ROOT, 'site.config.json'), 'utf8'));
 const { pages } = JSON.parse(readFileSync(join(ROOT, 'pages.json'), 'utf8'));
+
+// Launch switch. false = every page is noindex and robots.txt names no sitemap,
+// so the client can review on the real domain before Google lists anything.
+if (typeof cfg.indexing !== 'boolean')
+  throw new Error('site.config.json: "indexing" must be true (live) or false (preview)');
+const INDEXING = cfg.indexing;
 
 const GEO_TOKENS = ['Bangladesh', 'বাংলাদেশ', 'বাংলাদেশে', 'BD'];
 const errors = [];
@@ -303,7 +310,7 @@ function head(page) {
   <link rel="alternate" hreflang="${cfg.hreflang}" href="${url}">
   <link rel="alternate" hreflang="x-default" href="${url}">
   <meta name="theme-color" content="${cfg.themeColor}">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="robots" content="${INDEXING ? 'index,follow,max-image-preview:large' : 'noindex,nofollow'}">
   <meta name="rating" content="adult">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="${esc(cfg.siteName)}">
@@ -371,6 +378,17 @@ for (const page of pages) {
 /* ------------------------------------------------------- sitemap + robots */
 
 const today = new Date().toISOString().slice(0, 10);
+
+/** When the page's own source last changed — not the build date. A lastmod that
+ *  moves on every build tells Google nothing, and Google learns to ignore it. */
+function lastmod(slug) {
+  const src = `pages/${slug}.html`;
+  const git = (...args) => execFileSync('git', args, { cwd: ROOT, encoding: 'utf8' }).trim();
+  try {
+    if (git('status', '--porcelain', '--', src)) return today;   // uncommitted edit
+    return git('log', '-1', '--format=%cs', '--', src) || today;
+  } catch { return today; }
+}
 writeFileSync(join(ROOT, 'sitemap.xml'),
 `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.w3.org/1999/sitemap/0.9"
@@ -379,7 +397,7 @@ ${built.map(({ page }) => {
   const url = `${cfg.baseUrl}${page.slug === 'index' ? '/' : `/${page.slug}.html`}`;
   return `  <url>
     <loc>${url}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${lastmod(page.slug)}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
     <xhtml:link rel="alternate" hreflang="${cfg.hreflang}" href="${url}"/>
@@ -391,9 +409,7 @@ ${built.map(({ page }) => {
 writeFileSync(join(ROOT, 'robots.txt'),
 `User-agent: *
 Allow: /
-
-Sitemap: ${cfg.baseUrl}/sitemap.xml
-`);
+${INDEXING ? `\nSitemap: ${cfg.baseUrl}/sitemap.xml\n` : '# Preview: every page is noindex until launch (site.config.json "indexing").\n'}`);
 
 /* ------------------------------------------------------------------- gates */
 
@@ -404,6 +420,12 @@ for (const { page, html, out } of built) {
   const text = html.replace(/<script[\s\S]*?<\/script>/g, ' ')
                    .replace(/<style[\s\S]*?<\/style>/g, ' ')
                    .replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+
+  // 12 — one robots meta, and it matches the launch switch
+  const robots = [...html.matchAll(/<meta name="robots" content="([^"]*)"/g)].map((m) => m[1]);
+  if (robots.length !== 1) fail(out, 12, `expected 1 robots meta, found ${robots.length}`);
+  else if (INDEXING === robots[0].includes('noindex'))
+    fail(out, 12, `robots "${robots[0]}" contradicts "indexing": ${INDEXING}`);
 
   // 1 — exactly one h1, carrying the brand
   const h1s = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/g) || [];
@@ -543,3 +565,5 @@ if (errors.length) {
   process.exit(1);
 }
 console.log(`  ✓ all gates passed\n`);
+if (!INDEXING) console.log(`  ⚠ PREVIEW MODE — every page is noindex and robots.txt names no sitemap.
+    At launch: set "indexing": true in site.config.json, rebuild, push.\n`);

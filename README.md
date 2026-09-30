@@ -63,21 +63,24 @@ GitHub Pages serves the repo root directly.
 
 ## The build will refuse to publish broken SEO
 
-`npm run build` runs nine validation gates and **fails with a non-zero exit** if
-any page breaks one. This is deliberate — it is cheaper to fail a build than to
-publish a page that quietly loses its ranking.
+`npm run build` runs twelve validation gates and **fails with a non-zero exit**
+if any page breaks one. This is deliberate — it is cheaper to fail a build than
+to publish a page that quietly loses its ranking. Numbers match the build's
+error messages.
 
-1. Exactly one `<h1>`, containing `KK8`
-2. The Latin primary keyword appears in the page text (BD players type Latin)
-3. Title + meta description present, unique site-wide, carrying a geo token
-4. Canonical present and on the configured domain
-5. All JSON-LD parses; every declared schema type is emitted
-6. Every image has non-empty Bengali alt text
-7. No internal link points at a page that isn't in `pages.json`
-8. `lang="bn"`; hreflang self-referencing only, never cross-domain
-9. No body paragraph is duplicated on the sister property
-10. No MYR/RM figures, no Malaysian payment rails, no Bangladesh legality claim
-11. No primary keyword is targeted twice — on this site or across both sites
+1. Exactly one `<h1>`, containing `KK8`; the Latin primary keyword appears in the
+   page text (BD players type Latin)
+2. Title + meta description present, unique site-wide, carrying a geo token
+3. Canonical present and on the configured domain
+4. All JSON-LD parses; every declared schema type is emitted
+5. Every image has non-empty Bengali alt text
+6. No internal link points at a page that isn't in `pages.json`
+7. `lang="bn"`; hreflang self-referencing only, never cross-domain
+8. No body paragraph is duplicated on the sister property
+9. No MYR/RM figures, no Malaysian payment rails, no Bangladesh legality claim
+10. No primary keyword is targeted twice — on this site or across both sites
+11. Structural tags (`div`, `section`, `button`, `a`, `p`, …) open and close in balance
+12. Exactly one robots meta, matching the launch switch below
 
 If a gate fails it names the page and the rule. Fix the source, rebuild.
 
@@ -109,6 +112,21 @@ git push
 
 GitHub Pages serves `main`. `CNAME` holds `kk8.news` — do not delete it, or the
 custom domain unbinds.
+
+### Launch switch — `"indexing"` in `site.config.json`
+
+- `false` — **preview.** Every page carries `noindex,nofollow` and `robots.txt`
+  names no sitemap. The site is reachable at its real address for review, but
+  Google will not list it. The build prints `⚠ PREVIEW MODE` as a reminder.
+- `true` — **live.** Pages are indexable and `robots.txt` points at the sitemap.
+
+To launch: set it to `true`, `npm run build`, commit, push. Then in Google Search
+Console submit `sitemap.xml` and request indexing for the homepage, the full
+review and "Is KK8 legit?" first — after kk8.site's Tier-1 pages. Do not submit the sitemap while the switch is `false` — every
+URL would be reported as "Submitted URL marked noindex".
+
+`robots.txt` stays `Allow: /` in both modes on purpose: Google has to be able to
+fetch a page to see its `noindex`.
 
 ---
 
