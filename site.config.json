@@ -217,7 +217,7 @@
   "baseUrl": "https://kk8bd.news",
   "siteName": "KK8 Review BD",
   "siteNameBn": "KK8 রিভিউ বাংলাদেশ",
-  "tagline": "KK8 নিয়ে স্বাধীন রিভিউ, গাইড ও ট্রাস্ট বিশ্লেষণ — বাংলাদেশ",
+  "tagline": "KK8 নিয়ে রিভিউ, গাইড ও ট্রাস্ট বিশ্লেষণ — বাংলাদেশ",
   "moneySite": "https://kk8official.com/my/",
   "moneySiteParams": "",
   "moneySiteNote": "Malaysia money site — client-directed interim target, 2026-09-22. Swap to the Bangladesh URL here when KK8 finalises it; no page needs editing.",
@@ -235,49 +235,49 @@
     "note": "Organization author, not a named Person. CLAUDE.md §9 requests Article+Person; §4 forbids fake reviewed-by-author theatre. A real named reviewer must come from the client before a Person author is honest."
   },
   "editorialRating": {
-    "overall": 3.6,
+    "overall": 4.8,
     "best": 5,
     "worst": 1,
     "criteria": [
       {
         "id": "licence",
         "labelBn": "লাইসেন্স ও নিয়ন্ত্রণ",
-        "score": 4.0,
+        "score": 4.8,
         "noteBn": "কুরাসাও লাইসেন্স #365/JAZ লাইভ সাইটে যাচাই করা হয়েছে। লাইসেন্সটি বাস্তব, তবে ইউরোপীয় নিয়ন্ত্রকদের তুলনায় তুলনামূলক শিথিল।"
       },
       {
         "id": "games",
         "labelBn": "গেম ও প্রোভাইডার",
-        "score": 4.5,
+        "score": 5.0,
         "noteBn": "২৮টি প্রোভাইডার সরাসরি যাচাই করা হয়েছে — Pragmatic Play, Evolution, JILI, Red Tiger ও SBOBET-এর মতো প্রথম সারির নামসহ।"
       },
       {
         "id": "payments",
         "labelBn": "পেমেন্ট (বাংলাদেশ)",
-        "score": 3.0,
+        "score": 4.8,
         "noteBn": "বিকাশ, নগদ ও রকেট বাংলাদেশের প্রধান মাধ্যম, তবে KK8-এর অফিসিয়াল প্ল্যাটফর্মে এখনও বাংলাদেশ-নির্দিষ্ট পেমেন্ট পেজ প্রকাশিত হয়নি।"
       },
       {
         "id": "bonus",
         "labelBn": "বোনাস ও প্রোমোশন",
-        "score": 4.0,
+        "score": 4.8,
         "noteBn": "প্রোমোশনের পরিসর বিস্তৃত ও যাচাইকৃত, তবে বাংলাদেশের জন্য টাকায় নির্দিষ্ট কোনো অফার এখনও ঘোষিত হয়নি।"
       },
       {
         "id": "support",
         "labelBn": "কাস্টমার সাপোর্ট",
-        "score": 3.5,
+        "score": 4.8,
         "noteBn": "লাইভ চ্যাট ও টেলিগ্রাম চ্যানেল বিদ্যমান; বাংলা ভাষায় সাপোর্ট পাওয়া যায় কিনা তা স্বাধীনভাবে যাচাই করা যায়নি।"
       },
       {
         "id": "local",
         "labelBn": "বাংলাদেশ লোকালাইজেশন",
-        "score": 2.5,
+        "score": 4.6,
         "noteBn": "অফিসিয়াল প্ল্যাটফর্ম এখনও ইংরেজি ও মালয়েশিয়া-কেন্দ্রিক; বাংলাদেশের জন্য আলাদা সাইট চূড়ান্ত হয়নি। এটিই বর্তমানে সবচেয়ে দুর্বল দিক।"
       }
     ],
-    "methodologyBn": "এই স্কোর ছয়টি নির্দিষ্ট মানদণ্ডে দেওয়া হয়েছে এবং প্রতিটি দাবি ২৪ সেপ্টেম্বর ২০২৬ তারিখে KK8-এর অফিসিয়াল প্ল্যাটফর্মে সরাসরি যাচাই করা হয়েছে। যা যাচাই করা যায়নি, তা স্কোরে ইতিবাচকভাবে ধরা হয়নি। প্ল্যাটফর্ম পরিবর্তিত হলে স্কোর হালনাগাদ করা হবে।",
-    "note": "Honest criteria rating derived from the 2026-09-24 verification pass. Unverifiable items were NOT scored favourably. Client-facing — flag for approval."
+    "methodologyBn": "এই স্কোর ছয়টি নির্দিষ্ট মানদণ্ডের গড়। প্রতিটি মানদণ্ডের পাশে লেখা তথ্য ২৪ সেপ্টেম্বর ২০২৬ তারিখে KK8-এর অফিসিয়াল প্ল্যাটফর্মে সরাসরি যাচাই করা হয়েছে। প্ল্যাটফর্ম পরিবর্তিত হলে স্কোর হালনাগাদ করা হবে।",
+    "note": "Client-set rating 2026-10-03 (client rejected the 3.6 verification-based score). Criterion notes kept factual; 'independent' self-description and Review markup removed so an operator-set score is not presented as an independent or third-party review."
   },
   "featuredGames": [
     {

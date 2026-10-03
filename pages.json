@@ -37,9 +37,9 @@
         "kk8 bangladesh",
         "kk8 review"
       ],
-      "title": "KK8 BD — স্বাধীন রিভিউ, গাইড ও ট্রাস্ট বিশ্লেষণ",
-      "h1": "KK8 BD — বাংলাদেশ প্লেয়ারদের জন্য স্বাধীন রিভিউ হাব",
-      "meta": "KK8 নিয়ে বাংলাদেশ-কেন্দ্রিক স্বাধীন রিভিউ, লাইসেন্স যাচাই, ডিপোজিট ও উইথড্র গাইড এবং ফেক KK8 সাইট চেনার উপায়।",
+      "title": "KK8 BD — রিভিউ, গাইড ও ট্রাস্ট বিশ্লেষণ",
+      "h1": "KK8 BD — বাংলাদেশ প্লেয়ারদের জন্য রিভিউ ও গাইড হাব",
+      "meta": "KK8 নিয়ে বাংলাদেশ-কেন্দ্রিক রিভিউ, লাইসেন্স যাচাই, ডিপোজিট ও উইথড্র গাইড এবং ফেক KK8 সাইট চেনার উপায়।",
       "schema": [
         "Organization",
         "WebSite",
@@ -87,7 +87,7 @@
       ],
       "title": "KK8 FAQ — প্রশ্ন ও উত্তর | KK8 Review BD",
       "h1": "KK8 FAQ — বাংলাদেশ প্লেয়ারদের প্রশ্নের উত্তর",
-      "meta": "KK8 নিয়ে সবচেয়ে বেশি জিজ্ঞাসিত প্রশ্ন ও স্বাধীন উত্তর — বিশ্বস্ততা, লাইসেন্স, পেমেন্ট, উইথড্র, অ্যাপ ও সাপোর্ট।",
+      "meta": "KK8 নিয়ে সবচেয়ে বেশি জিজ্ঞাসিত প্রশ্ন ও যাচাইকৃত উত্তর — বিশ্বস্ততা, লাইসেন্স, পেমেন্ট, উইথড্র, অ্যাপ ও সাপোর্ট।",
       "schema": [
         "Article",
         "BreadcrumbList",
@@ -114,14 +114,12 @@
       "meta": "KK8-এর বোনাস অফার, রিবেট ও রিলোড প্রোমোর নিরপেক্ষ বিশ্লেষণ — শর্তাবলি, টার্নওভার ও বাংলাদেশ প্লেয়ারদের জন্য বাস্তব মূল্য।",
       "schema": [
         "Article",
-        "Review",
         "BreadcrumbList",
         "FAQPage"
       ],
       "bdVolume": 0,
       "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25",
-      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8bd.site (gate 10).",
-      "ratingCriterion": "bonus"
+      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8bd.site (gate 10)."
     },
     {
       "slug": "games-software",
@@ -185,7 +183,6 @@
       "meta": "KK8-এর পূর্ণ রিভিউ — লাইসেন্স #365/JAZ, গেম প্রোভাইডার, বোনাস, পেমেন্ট, সাপোর্ট ও নিরাপত্তা। বাংলাদেশ প্লেয়ারদের দৃষ্টিকোণ থেকে যাচাই।",
       "schema": [
         "Article",
-        "Review",
         "BreadcrumbList",
         "FAQPage"
       ],
@@ -319,14 +316,12 @@
       "meta": "KK8 customer service কতটা কার্যকর? লাইভ চ্যাট, টেলিগ্রাম ও সোশ্যাল চ্যানেলের উপলব্ধতা ও সাড়ার বিশ্লেষণ — বাংলাদেশ দৃষ্টিকোণ।",
       "schema": [
         "Article",
-        "Review",
         "BreadcrumbList",
         "FAQPage"
       ],
       "bdVolume": 0,
       "volumeSource": "Ahrefs Keywords Explorer, country=BD, 2026-09-25",
-      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8bd.site (gate 10).",
-      "ratingCriterion": "support"
+      "volumeNote": "Retargeted 2026-09-27 to the investigational form: the transactional form belongs to kk8bd.site (gate 10)."
     },
     {
       "slug": "player-ratings",

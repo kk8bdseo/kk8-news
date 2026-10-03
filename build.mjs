@@ -165,7 +165,7 @@ function toc(content) {
   </nav>`;
 }
 
-/** Editorial scorecard — honest criteria-based rating from site.config.json. */
+/** Editorial scorecard — criteria-based rating from site.config.json (visible only, no markup). */
 function scorecard() {
   const r = cfg.editorialRating;
   return `<div class="rounded-base border border-brand-hair bg-white p-6">
@@ -253,29 +253,12 @@ function schemaBlocks(page) {
     about: { '@type': 'Organization', name: cfg.brand },
   });
 
-  if (page.schema.includes('Review')) out.push({
-    '@context': 'https://schema.org', '@type': 'Review',
-    itemReviewed: {
-      '@type': 'Organization', name: cfg.brand, url: cfg.moneySite,
-      areaServed: { '@type': 'Country', name: cfg.geo.country },
-    },
-    reviewRating: {
-      '@type': 'Rating',
-      // Focused reviews (bonus, support) rate their own criterion, not the overall score.
-      ratingValue: page.ratingCriterion
-        ? cfg.editorialRating.criteria.find((c) => c.id === page.ratingCriterion).score
-        : cfg.editorialRating.overall,
-      bestRating: cfg.editorialRating.best,
-      worstRating: 1,
-    },
-    author: { '@type': 'Organization', name: cfg.author.nameBn, url: cfg.baseUrl },
-    publisher: { '@type': 'Organization', name: cfg.publisher.nameBn },
-    datePublished: cfg.lastVerified,
-    inLanguage: cfg.hreflang,
-    reviewBody: page.meta,
-    // No AggregateRating: it requires real user-rating counts. Fabricating them would
-    // be invented data on a YMYL page. Deferred until genuine ratings exist.
-  });
+  // No Review or AggregateRating markup. The score is set by the brand's own team, and
+  // Google's structured-data rules treat reviews of an Organization placed by that
+  // organization (or a site it controls) as self-serving — a manual-action risk with
+  // no rich result to gain. The scorecard stays as visible page content only.
+  if (page.schema.includes('Review') || page.schema.includes('AggregateRating'))
+    fail(`${page.slug}.html`, 4, 'Review/AggregateRating markup is self-serving on this property — remove it from pages.json');
 
   if (page.schema.includes('BreadcrumbList')) out.push({
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',
