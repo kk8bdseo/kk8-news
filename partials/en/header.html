@@ -1,0 +1,32 @@
+<header class="border-b-2 border-brand-navy bg-white">
+  <div class="mx-auto max-w-5xl px-4">
+    <div class="flex items-center gap-4 py-5">
+      <a href="/en/" class="shrink-0" aria-label="{{siteName}} — home">
+        <img src="/assets/img/logo.png" alt="KK8 Review Bangladesh logo" width="104" height="25" class="h-[25px] w-auto">
+      </a>
+      <div class="hidden min-w-0 border-l border-brand-hair pl-4 sm:block">
+        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-blue">Reviews &amp; guides · Bangladesh</p>
+        <p class="text-xs text-brand-slate">{{taglineEn}}</p>
+      </div>
+      <div class="ml-auto flex shrink-0 items-center gap-2">
+      {{langSwitch}}
+      <button type="button" id="navToggle" class="rounded-base border border-brand-hair p-2 md:hidden"
+              aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <span class="block h-0.5 w-5 bg-brand-navy"></span>
+        <span class="mt-1 block h-0.5 w-5 bg-brand-navy"></span>
+        <span class="mt-1 block h-0.5 w-5 bg-brand-navy"></span>
+      </button>
+      </div>
+    </div>
+    <nav class="hidden border-t border-brand-hair md:block" aria-label="Main menu">
+      <ul class="-mx-3 flex flex-wrap items-center">
+{{nav}}
+      </ul>
+    </nav>
+  </div>
+  <nav id="mobileNav" hidden class="border-t border-brand-hair bg-brand-tint md:hidden" aria-label="Mobile menu">
+    <ul class="mx-auto max-w-5xl px-4 py-2">
+{{nav}}
+    </ul>
+  </nav>
+</header>

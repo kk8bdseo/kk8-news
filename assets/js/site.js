@@ -12,6 +12,14 @@
     });
   }
 
+  /* Language switcher is a <details>; close it on a click anywhere else. */
+  var switches = document.querySelectorAll('details.lang-switch');
+  document.addEventListener('click', function (e) {
+    Array.prototype.forEach.call(switches, function (d) {
+      if (d.open && !d.contains(e.target)) d.open = false;
+    });
+  });
+
   /* Accordions are progressive: markup renders open and readable without JS,
      so the FAQ content is always crawlable and never hidden from indexing. */
   var qs = document.querySelectorAll('.faq-q');

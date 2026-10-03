@@ -38,6 +38,24 @@ Then rebuild:
 npm run build
 ```
 
+### Two languages — Bengali and English
+
+Every page exists twice. Bengali is the default and keeps the root addresses
+(`/faq.html`); English lives under `/en/` (`/en/faq.html`). Each pair points at
+the other with hreflang (`bn-BD` / `en-BD`, `x-default` = Bengali), and the flag
+switcher in the header links each page to its twin.
+
+| What | Bengali | English |
+|---|---|---|
+| Page body | `pages/<slug>.html` | `pages/en/<slug>.html` |
+| Title, H1, meta | `pages.json` → the page | `pages.json` → the page's `"en"` object |
+| Header, footer, shells, byline… | `partials/<name>.html` | `partials/en/<name>.html` |
+| Scorecard text | `labelBn`, `noteBn`, `methodologyBn` | `labelEn`, `noteEn`, `methodologyEn` |
+| Links inside a page | `/faq.html` | `/en/faq.html` |
+
+On review pages the H1 is written inside the page body, so change it there as
+well as in `pages.json`. **Edit both languages** — the client reads both.
+
 ### Changing the money-site link everywhere
 
 The register/login/deposit buttons all point at one value. Open
@@ -63,7 +81,7 @@ GitHub Pages serves the repo root directly.
 
 ## The build will refuse to publish broken SEO
 
-`npm run build` runs twelve validation gates and **fails with a non-zero exit**
+`npm run build` runs thirteen validation gates and **fails with a non-zero exit**
 if any page breaks one. This is deliberate — it is cheaper to fail a build than
 to publish a page that quietly loses its ranking. Numbers match the build's
 error messages.
@@ -81,6 +99,13 @@ error messages.
 10. No primary keyword is targeted twice — on this site or across both sites
 11. Structural tags (`div`, `section`, `button`, `a`, `p`, …) open and close in balance
 12. Exactly one robots meta, matching the launch switch below
+13. An English page carries no Bengali text (outside the language switcher's "বাংলা" link)
+
+Gate 6 also fails when a page links into the other language anywhere except the
+language switcher — an English page linking to `/faq.html` instead of
+`/en/faq.html` is an untranslated link. Gate 4 fails on any Review or
+AggregateRating markup: the score is set by the brand's own team, so marking it
+up as a review is self-serving under Google's rules.
 
 If a gate fails it names the page and the rule. Fix the source, rebuild.
 
@@ -172,6 +197,7 @@ assets/img/          self-hosted brand assets (never hotlink the operator's)
 sitemap.xml          generated from pages.json
 robots.txt           generated
 CNAME                custom domain for GitHub Pages
+en/                  English pages (generated — edit pages/en/ instead)
 _config.yml          keeps sources (pages/, partials/, pages.json …) off the published site
 404.html             generated "page not found" page
 ```

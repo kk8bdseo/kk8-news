@@ -19,6 +19,10 @@
 }
 
 @layer components {
+  /* Language switcher: <details>, no marker triangle in any browser. */
+  .lang-switch > summary { list-style: none; }
+  .lang-switch > summary::-webkit-details-marker { display: none; }
+
   /* Article rhythm, tuned for Bengali measure rather than Latin. */
   .article h1 { @apply text-3xl font-black text-brand-navy sm:text-4xl; }
   .article h2 {

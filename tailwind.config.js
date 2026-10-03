@@ -1,7 +1,7 @@
 /** KK8 Bangladesh — design tokens from CLAUDE.md §3 (live-site brand CI scrape).
  *  Colours are tokens, never hard-coded ad hoc. No webfont: KK8 uses the system stack. */
 module.exports = {
-  content: ['./*.html', './pages/**/*.html', './partials/**/*.html'],
+  content: ['./*.html', './en/**/*.html', './pages/**/*.html', './partials/**/*.html'],
   theme: {
     extend: {
       colors: {

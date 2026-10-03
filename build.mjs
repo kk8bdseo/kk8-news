@@ -24,6 +24,33 @@ if (typeof cfg.indexing !== 'boolean')
   throw new Error('site.config.json: "indexing" must be true (live) or false (preview)');
 const INDEXING = cfg.indexing;
 
+// Languages. Bengali is the default and keeps the root URLs; every other language
+// lives under its prefix (/en/). A page exists in a language when it has a manifest
+// entry for that language (page.en) and a source file (pages/en/<slug>.html).
+const LANGS = Object.keys(cfg.langs);
+const DEFAULT_LANG = 'bn';
+let LANG = DEFAULT_LANG;   // the language being rendered — partial() and the fragments read it
+const L = (lang = LANG) => cfg.langs[lang];
+const pagePath = (slug, lang = LANG) => `${L(lang).prefix}${slug === 'index' ? '/' : `/${slug}.html`}`;
+const pageUrl = (slug, lang = LANG) => `${cfg.baseUrl}${pagePath(slug, lang)}`;
+const srcOf = (slug, lang) => lang === DEFAULT_LANG ? `pages/${slug}.html` : `pages/${lang}/${slug}.html`;
+const outOf = (slug, lang) => lang === DEFAULT_LANG ? `${slug}.html` : `${lang}/${slug}.html`;
+/** A config field in the current language — `labelBn` / `labelEn`, else the plain key. */
+const tr = (obj, key, lang = LANG) => obj?.[key + (lang === 'bn' ? 'Bn' : 'En')] ?? obj?.[key];
+
+/** Interface strings the build itself writes (everything else lives in partials/pages). */
+const UI = {
+  bn: { home: 'হোম', provider: 'প্রোভাইডার', slotGame: (p) => `${p}-এর স্লট গেম`, language: 'ভাষা', country: 'বাংলাদেশ',
+        tableHead: ['ক্যাটাগরি', 'সংখ্যা', 'প্রোভাইডার'], toc: 'সূচিপত্র', tocLabel: 'এই পেজের সূচিপত্র',
+        editorialScore: 'সম্পাদকীয় স্কোর',
+        nav: ['হোম', 'পূর্ণ রিভিউ', 'KK8 কি নিরাপদ?', 'ডিপোজিট গাইড', 'উইথড্র গাইড', 'বোনাস রিভিউ', 'ভুয়া সাইট চেনা', 'FAQ'] },
+  en: { home: 'Home', provider: 'provider', slotGame: (p) => `slot game by ${p}`, language: 'Language', country: 'Bangladesh',
+        tableHead: ['Category', 'Count', 'Providers'], toc: 'Contents', tocLabel: 'Contents of this page',
+        editorialScore: 'Editorial score',
+        nav: ['Home', 'Full review', 'Is KK8 safe?', 'Deposit guide', 'Withdrawal guide', 'Bonus review', 'Spot fake sites', 'FAQ'] },
+};
+const ui = () => UI[LANG];
+
 const GEO_TOKENS = ['Bangladesh', 'বাংলাদেশ', 'বাংলাদেশে', 'BD'];
 const errors = [];
 const warns = [];
@@ -32,7 +59,11 @@ const fail = (slug, gate, msg) => errors.push(`[${slug}] gate ${gate}: ${msg}`);
 /* ---------------------------------------------------------------- helpers */
 
 const read = (p) => readFileSync(join(ROOT, p), 'utf8');
-const partial = (name) => read(`partials/${name}.html`);
+/** partials/en/<name>.html overrides partials/<name>.html on English pages. */
+const partial = (name) => {
+  const localised = `partials/${LANG}/${name}.html`;
+  return read(LANG !== DEFAULT_LANG && existsSync(join(ROOT, localised)) ? localised : `partials/${name}.html`);
+};
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
   .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -66,7 +97,7 @@ const moneyUrl = () => cfg.moneySite + (cfg.moneySiteParams || '');
 /** KK8's own provider cards (name + category label printed on the art). Lazy: every
  *  provider list sits below the fold. width/height reserve space, so nothing shifts. */
 const providerCard = (p, g, liClass) => `<li class="${liClass}">
-      <img src="${p.img}" alt="${esc(p.name)} — ${esc(g.labelBn)} প্রোভাইডার" width="${p.w}" height="${p.h}"
+      <img src="${p.img}" alt="${esc(p.name)} — ${esc(tr(g, 'label'))} ${ui().provider}" width="${p.w}" height="${p.h}"
            loading="lazy" decoding="async" class="block h-auto w-full">
     </li>`;
 
@@ -83,9 +114,9 @@ function providerGroup(id) {
  *  the art lives on kk8bd.site, and a table keeps this property visually its own. */
 function providerTable() {
   return `<table class="data-table my-6">
-  <thead><tr><th>ক্যাটাগরি</th><th>সংখ্যা</th><th>প্রোভাইডার</th></tr></thead>
+  <thead><tr>${ui().tableHead.map((h) => `<th>${h}</th>`).join('')}</tr></thead>
   <tbody>
-${(cfg.providerGroups || []).map((g) => `    <tr><td><strong>${esc(g.labelBn)}</strong></td><td>${g.providers.length}</td><td>${g.providers.map((p) => esc(p.name)).join(', ')}</td></tr>`).join('\n')}
+${(cfg.providerGroups || []).map((g) => `    <tr><td><strong>${esc(tr(g, 'label'))}</strong></td><td>${g.providers.length}</td><td>${g.providers.map((p) => esc(p.name)).join(', ')}</td></tr>`).join('\n')}
   </tbody>
 </table>`;
 }
@@ -95,7 +126,7 @@ ${(cfg.providerGroups || []).map((g) => `    <tr><td><strong>${esc(g.labelBn)}</
  *  scrolling with a mouse is awkward. */
 function providerGrid() {
   return (cfg.providerGroups || []).map((g) => `<div class="min-w-0">
-    <p class="text-xs font-bold uppercase tracking-widest text-brand-blue">${esc(g.labelBn)} <span class="text-brand-slate">· ${g.providers.length}</span></p>
+    <p class="text-xs font-bold uppercase tracking-widest text-brand-blue">${esc(tr(g, 'label'))} <span class="text-brand-slate">· ${g.providers.length}</span></p>
     <ul class="carousel-track mt-3 flex snap-x gap-3 overflow-x-auto pb-1 lg:grid lg:grid-cols-9 lg:overflow-visible">
     ${g.providers.map((p) => providerCard(p, g, 'w-[112px] shrink-0 snap-start lg:w-auto')).join('\n    ')}
     </ul>
@@ -106,18 +137,18 @@ function paymentList() {
   return cfg.paymentRails.map((r) =>
     `<li class="flex items-start gap-3 rounded-base border border-brand-hair bg-brand-tint p-4">
       <span class="mt-0.5 inline-block h-2 w-2 shrink-0 rounded-full bg-brand-blue" aria-hidden="true"></span>
-      <span><strong class="font-bold text-brand-navy">${esc(r.nameBn)}</strong>
-      <span class="text-brand-slate"> (${esc(r.name)}) — ${esc(r.type)}</span></span>
+      <span><strong class="font-bold text-brand-navy">${esc(tr(r, 'name'))}</strong>
+      <span class="text-brand-slate">${tr(r, 'name') !== r.name ? ` (${esc(r.name)})` : ''} — ${esc(tr(r, 'type'))}</span></span>
     </li>`
   ).join('\n');
 }
 
 function categoryGrid() {
   return cfg.productCategories.map((c) =>
-    `<li><a href="/games-software.html"
+    `<li><a href="${pagePath('games-software')}"
       class="block rounded-base border border-brand-hair bg-white p-5 transition hover:border-brand-blue hover:shadow-sm">
-      <span class="block text-lg font-bold text-brand-navy">${esc(c.nameBn)}</span>
-      <span class="mt-1 block text-sm text-brand-slate">${esc(c.name)}</span></a></li>`
+      <span class="block text-lg font-bold text-brand-navy">${esc(tr(c, 'name'))}</span>${LANG === DEFAULT_LANG ? `
+      <span class="mt-1 block text-sm text-brand-slate">${esc(c.name)}</span>` : ''}</a></li>`
   ).join('\n');
 }
 
@@ -126,7 +157,7 @@ function categoryGrid() {
 function gameGrid() {
   return cfg.featuredGames.map((g) => `<li>
       <a href="${moneyUrl()}" rel="nofollow noopener" target="_blank" class="group block">
-        <img src="${g.img}" alt="${esc(g.name)} — ${esc(g.provider)}-এর স্লট গেম" width="${g.w}" height="${g.h}"
+        <img src="${g.img}" alt="${esc(g.name)} — ${esc(ui().slotGame(g.provider))}" width="${g.w}" height="${g.h}"
              loading="lazy" decoding="async" class="block h-auto w-full transition duration-200 group-hover:-translate-y-1">
         <p class="mt-1 truncate text-center text-sm font-bold text-brand-navy" title="${esc(g.name)}">${esc(g.name)}</p>
         <p class="text-center text-xs text-brand-slate">${esc(g.provider)}</p>
@@ -141,14 +172,9 @@ function trustMarks() {
 }
 
 function navLinks(current) {
-  const items = [
-    ['/', 'হোম'], ['/kk8-review.html', 'পূর্ণ রিভিউ'], ['/is-kk8-legit.html', 'KK8 কি নিরাপদ?'],
-    ['/deposit-guide.html', 'ডিপোজিট গাইড'], ['/withdrawal-guide.html', 'উইথড্র গাইড'],
-    ['/bonus-review.html', 'বোনাস রিভিউ'], ['/spot-fake-kk8-sites.html', 'ভুয়া সাইট চেনা'],
-    ['/faq.html', 'FAQ'],
-  ];
-  return items.map(([href, label]) => {
-    const active = (current === 'index' && href === '/') || href === `/${current}.html`;
+  const slugs = ['index', 'kk8-review', 'is-kk8-legit', 'deposit-guide', 'withdrawal-guide', 'bonus-review', 'spot-fake-kk8-sites', 'faq'];
+  return slugs.map((slug, i) => [slug, pagePath(slug), ui().nav[i]]).map(([slug, href, label]) => {
+    const active = slug === current;
     return `<li><a href="${href}" class="block px-3 py-2 text-sm font-semibold ${active
       ? 'text-brand-blue' : 'text-brand-navy hover:text-brand-blue'}"${active ? ' aria-current="page"' : ''}>${label}</a></li>`;
   }).join('\n');
@@ -158,8 +184,8 @@ function navLinks(current) {
 function toc(content) {
   const hs = [...content.matchAll(/<h2\b[^>]*id="([^"]+)"[^>]*>([\s\S]*?)<\/h2>/g)];
   if (hs.length < 3) return '';
-  return `<nav class="toc rounded-base border border-brand-hair bg-brand-tint p-5" aria-label="এই পেজের সূচিপত্র">
-    <p class="mb-3 text-xs font-bold uppercase tracking-widest text-brand-blue">সূচিপত্র</p>
+  return `<nav class="toc rounded-base border border-brand-hair bg-brand-tint p-5" aria-label="${ui().tocLabel}">
+    <p class="mb-3 text-xs font-bold uppercase tracking-widest text-brand-blue">${ui().toc}</p>
     <ol class="space-y-2">${hs.map(([, id, label]) =>
       `<li><a href="#${id}" class="text-sm text-brand-navy underline decoration-brand-hair hover:decoration-brand-blue">${label.replace(/<[^>]+>/g, '')}</a></li>`).join('')}</ol>
   </nav>`;
@@ -172,20 +198,20 @@ function scorecard() {
     <div class="flex items-baseline gap-3 border-b border-brand-hair pb-4">
       <span class="text-4xl font-black text-brand-blue">${r.overall}</span>
       <span class="text-lg font-semibold text-brand-slate">/ ${r.best}</span>
-      <span class="ml-auto text-xs font-semibold uppercase tracking-widest text-brand-slate">সম্পাদকীয় স্কোর</span>
+      <span class="ml-auto text-xs font-semibold uppercase tracking-widest text-brand-slate">${ui().editorialScore}</span>
     </div>
     <ul class="mt-4 space-y-3">${r.criteria.map((c) => `
       <li>
         <div class="flex items-baseline justify-between gap-4">
-          <span class="text-sm font-semibold text-brand-navy">${esc(c.labelBn)}</span>
+          <span class="text-sm font-semibold text-brand-navy">${esc(tr(c, 'label'))}</span>
           <span class="text-sm font-bold text-brand-blue">${c.score}</span>
         </div>
         <div class="mt-1 h-1.5 w-full overflow-hidden rounded-pill bg-brand-tint">
           <div class="h-full rounded-pill bg-brand-blue" style="width:${(c.score / r.best) * 100}%"></div>
         </div>
-        <p class="mt-1 text-xs leading-bn text-brand-slate">${esc(c.noteBn)}</p>
+        <p class="mt-1 text-xs leading-bn text-brand-slate">${esc(tr(c, 'note'))}</p>
       </li>`).join('')}</ul>
-    <p class="mt-5 border-t border-brand-hair pt-4 text-xs leading-bn text-brand-slate">${esc(r.methodologyBn)}</p>
+    <p class="mt-5 border-t border-brand-hair pt-4 text-xs leading-bn text-brand-slate">${esc(tr(r, 'methodology'))}</p>
   </div>`;
 }
 
@@ -202,10 +228,35 @@ function extractFaq(html) {
   return out;
 }
 
+/** Bangladesh flag, drawn inline — no image request, crisp at any size. */
+const FLAG_BD = '<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" class="shrink-0">'
+  + '<circle cx="10" cy="10" r="10" fill="#006a4e"/><circle cx="9" cy="10" r="4.6" fill="#f42a41"/></svg>';
+
+/** Header language switcher: flag + current language; opens to the same page in each
+ *  language it exists in. <details> works with no JavaScript; site.js only closes it on
+ *  an outside click. Links carry hreflang and lang so crawlers read them as alternates. */
+function langSwitch(slug) {
+  // English first, matching the region/language picker on KK8's own platform.
+  const options = [...LANGS].sort((a, b) => (b === 'en') - (a === 'en')).filter((l) => avail[l].has(slug)).map((l) => {
+    const cur = l === LANG;
+    return `<li><a href="${pagePath(slug, l)}" hreflang="${l}" lang="${l}" class="${cur
+      ? 'font-bold text-brand-blue underline' : 'text-brand-navy hover:text-brand-blue'}"${cur ? ' aria-current="true"' : ''}>${cfg.langs[l].label}</a></li>`;
+  }).join('<li aria-hidden="true" class="text-brand-hair">|</li>');
+  return `<details class="lang-switch relative">
+        <summary class="flex cursor-pointer items-center gap-1.5 rounded-pill border border-brand-hair px-2.5 py-1.5 text-xs font-bold text-brand-navy transition hover:border-brand-blue" aria-label="${ui().language}: ${L().label}">
+          ${FLAG_BD}<span>${L().short}</span><span aria-hidden="true" class="text-[10px] text-brand-slate">▾</span>
+        </summary>
+        <div class="absolute right-0 z-50 mt-2 w-52 rounded-base border border-brand-hair bg-white p-4 shadow-lg">
+          <p class="flex items-center gap-2 text-sm font-bold text-brand-navy">${FLAG_BD}${ui().country}</p>
+          <ul class="mt-2 flex items-center gap-2 pl-7 text-sm">${options}</ul>
+        </div>
+      </details>`;
+}
+
 /* ------------------------------------------------------------------ schema */
 
 function schemaBlocks(page) {
-  const url = `${cfg.baseUrl}${page.slug === 'index' ? '/' : `/${page.slug}.html`}`;
+  const url = pageUrl(page.slug);
   const out = [];
 
   if (page.schema.includes('Organization')) out.push({
@@ -213,7 +264,7 @@ function schemaBlocks(page) {
     name: cfg.brand, alternateName: cfg.siteName, url: cfg.baseUrl,
     logo: `${cfg.baseUrl}/assets/img/logo.png`,
     image: `${cfg.baseUrl}${cfg.ogImage}`,
-    description: cfg.tagline,
+    description: tr(cfg, 'tagline'),
     sameAs: [cfg.moneySite, cfg.sisterSite, cfg.social.facebook, cfg.social.instagram, cfg.social.telegram],
     areaServed: { '@type': 'Country', name: cfg.geo.country },
     hasCredential: {
@@ -226,8 +277,8 @@ function schemaBlocks(page) {
 
   if (page.schema.includes('WebSite')) out.push({
     '@context': 'https://schema.org', '@type': 'WebSite',
-    name: cfg.siteName, alternateName: cfg.siteNameBn, url: cfg.baseUrl,
-    inLanguage: cfg.hreflang,
+    name: cfg.siteName, alternateName: cfg.siteNameBn, url: pageUrl('index'),
+    inLanguage: L().hreflang,
     publisher: { '@type': 'Organization', name: cfg.brand },
     // No SearchAction: neither site has a search, and Google retired the sitelinks
     // search box. Declaring one would be a schema-only claim (CLAUDE.md §9).
@@ -237,15 +288,15 @@ function schemaBlocks(page) {
     '@context': 'https://schema.org', '@type': 'Article',
     headline: page.h1,
     description: page.meta,
-    inLanguage: cfg.hreflang,
+    inLanguage: L().hreflang,
     datePublished: cfg.lastVerified,
     dateModified: cfg.lastVerified,
     // Author is the editorial team, not an invented human. CLAUDE.md §9 asks for
     // Person; §4 forbids fake reviewed-by-author theatre. Until the client supplies a
     // real named reviewer, an Organization author is the honest reading of both.
-    author: { '@type': 'Organization', name: cfg.author.nameBn, url: cfg.baseUrl },
+    author: { '@type': 'Organization', name: tr(cfg.author, 'name'), url: pageUrl('index') },
     publisher: {
-      '@type': 'Organization', name: cfg.publisher.nameBn,
+      '@type': 'Organization', name: tr(cfg.publisher, 'name'),
       logo: { '@type': 'ImageObject', url: `${cfg.baseUrl}/assets/img/logo.png` },
     },
     image: `${cfg.baseUrl}${cfg.ogImage}`,
@@ -263,14 +314,14 @@ function schemaBlocks(page) {
   if (page.schema.includes('BreadcrumbList')) out.push({
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'হোম', item: `${cfg.baseUrl}/` },
+      { '@type': 'ListItem', position: 1, name: ui().home, item: pageUrl('index') },
       { '@type': 'ListItem', position: 2, name: page.h1, item: url },
     ],
   });
 
   if (page.schema.includes('FAQPage') && page.faq?.length) out.push({
     '@context': 'https://schema.org', '@type': 'FAQPage',
-    inLanguage: cfg.hreflang,
+    inLanguage: L().hreflang,
     mainEntity: page.faq.map((f) => ({
       '@type': 'Question', name: f.q,
       acceptedAnswer: { '@type': 'Answer', text: f.a },
@@ -284,20 +335,24 @@ function schemaBlocks(page) {
 /* -------------------------------------------------------------------- head */
 
 function head(page) {
-  const url = `${cfg.baseUrl}${page.slug === 'index' ? '/' : `/${page.slug}.html`}`;
+  const url = pageUrl(page.slug);
+  const twins = LANGS.filter((l) => avail[l].has(page.slug));
+  const alternates = twins.map((l) =>
+    `  <link rel="alternate" hreflang="${cfg.langs[l].hreflang}" href="${pageUrl(page.slug, l)}">`).join('\n');
   return `  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(page.title)}</title>
   <meta name="description" content="${esc(page.meta)}">
   <link rel="canonical" href="${url}">
-  <link rel="alternate" hreflang="${cfg.hreflang}" href="${url}">
-  <link rel="alternate" hreflang="x-default" href="${url}">
+${alternates}
+  <link rel="alternate" hreflang="x-default" href="${pageUrl(page.slug, twins.includes(DEFAULT_LANG) ? DEFAULT_LANG : LANG)}">
   <meta name="theme-color" content="${cfg.themeColor}">
   <meta name="robots" content="${INDEXING ? 'index,follow,max-image-preview:large' : 'noindex,nofollow'}">
   <meta name="rating" content="adult">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="${esc(cfg.siteName)}">
-  <meta property="og:locale" content="${cfg.locale}">
+  <meta property="og:locale" content="${L().locale}">${twins.filter((l) => l !== LANG).map((l) => `
+  <meta property="og:locale:alternate" content="${cfg.langs[l].locale}">`).join('')}
   <meta property="og:title" content="${esc(page.title)}">
   <meta property="og:description" content="${esc(page.meta)}">
   <meta property="og:url" content="${url}">
@@ -314,11 +369,21 @@ function head(page) {
 
 /* ------------------------------------------------------------------- build */
 
+const avail = Object.fromEntries(LANGS.map((lang) => [lang, new Set(pages
+  .filter((p) => (lang === DEFAULT_LANG || p[lang]) && existsSync(join(ROOT, srcOf(p.slug, lang))))
+  .map((p) => p.slug))]));
 const built = [];
 
-for (const page of pages) {
-  const src = `pages/${page.slug}.html`;
-  if (!existsSync(join(ROOT, src))) { warns.push(`no source yet: ${src}`); continue; }
+for (const lang of LANGS) {
+LANG = lang;
+const missing = pages.filter((p) => !avail[lang].has(p.slug)).map((p) => p.slug);
+if (missing.length) warns.push(`${lang}: ${missing.length} page(s) not built yet — ${missing.join(', ')}`);
+if (lang !== DEFAULT_LANG) mkdirSync(join(ROOT, lang), { recursive: true });
+
+for (const base of pages) {
+  if (!avail[lang].has(base.slug)) continue;
+  const page = { ...base, ...(lang === DEFAULT_LANG ? {} : base[lang]), lang };
+  const src = srcOf(page.slug, lang);
 
   const ctx = {
     ...cfg,
@@ -326,7 +391,9 @@ for (const page of pages) {
     head: head(page),
     schema: '',
     content: '',
+    lang,
     nav: navLinks(page.slug),
+    langSwitch: langSwitch(page.slug),
     providerGrid: providerGrid(),
     providerCount: (cfg.providers || []).length,
     providerTable: providerTable(),
@@ -347,16 +414,18 @@ for (const page of pages) {
   ctx.schema = schemaBlocks(page);
   ctx.toc = toc(content);
 
-  const shell = `partials/shell-${page.template}.html`;
-  if (existsSync(join(ROOT, shell))) {
-    content = tokens(includes(read(shell)), { ...ctx, content }, page.slug);
+  // Shells go through partial() so English pages get partials/en/shell-*.html.
+  if (existsSync(join(ROOT, `partials/shell-${page.template}.html`))) {
+    content = tokens(includes(partial(`shell-${page.template}`)), { ...ctx, content }, page.slug);
   }
 
   const html = tokens(includes(partial('layout')), { ...ctx, content }, page.slug);
-  const out = `${page.slug}.html`;
+  const out = outOf(page.slug, lang);
   writeFileSync(join(ROOT, out), html);
-  built.push({ page, html, out });
+  built.push({ page, html, out, lang });
 }
+}
+LANG = DEFAULT_LANG;
 
 /* ---------------------------------------------- 404 page + redirect stubs */
 
@@ -366,12 +435,12 @@ for (const page of pages) {
   const notFound = read('partials/404.html');
   const head404 = `  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>পেজটি খুঁজে পাওয়া যায়নি | ${esc(cfg.siteName)}</title>
+  <title>পেজটি খুঁজে পাওয়া যায়নি · Page not found | ${esc(cfg.siteName)}</title>
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="${cfg.themeColor}">
   <link rel="icon" href="/assets/img/favicon-32x32.png" sizes="32x32">
   <link rel="stylesheet" href="/assets/css/site.css">`;
-  const ctx404 = { ...cfg, nav: navLinks(''), moneyUrl: moneyUrl(), year: new Date().getFullYear(),
+  const ctx404 = { ...cfg, lang: DEFAULT_LANG, nav: navLinks(''), langSwitch: langSwitch('index'), moneyUrl: moneyUrl(), year: new Date().getFullYear(),
     bodyClass: 'tpl-404', head: head404, schema: '', content: tokens(notFound, cfg, '404') };
   writeFileSync(join(ROOT, '404.html'), tokens(includes(partial('layout')), ctx404, '404'));
 }
@@ -412,8 +481,7 @@ const today = new Date().toISOString().slice(0, 10);
 
 /** When the page's own source last changed — not the build date. A lastmod that
  *  moves on every build tells Google nothing, and Google learns to ignore it. */
-function lastmod(slug) {
-  const src = `pages/${slug}.html`;
+function lastmod(src) {
   const git = (...args) => execFileSync('git', args, { cwd: ROOT, encoding: 'utf8' }).trim();
   try {
     if (git('status', '--porcelain', '--', src)) return today;   // uncommitted edit
@@ -424,14 +492,15 @@ writeFileSync(join(ROOT, 'sitemap.xml'),
 `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.w3.org/1999/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${built.map(({ page }) => {
-  const url = `${cfg.baseUrl}${page.slug === 'index' ? '/' : `/${page.slug}.html`}`;
+${built.map(({ page, lang }) => {
+  const twins = LANGS.filter((l) => avail[l].has(page.slug));
   return `  <url>
-    <loc>${url}</loc>
-    <lastmod>${lastmod(page.slug)}</lastmod>
+    <loc>${pageUrl(page.slug, lang)}</loc>
+    <lastmod>${lastmod(srcOf(page.slug, lang))}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
-    <xhtml:link rel="alternate" hreflang="${cfg.hreflang}" href="${url}"/>
+${twins.map((l) => `    <xhtml:link rel="alternate" hreflang="${cfg.langs[l].hreflang}" href="${pageUrl(page.slug, l)}"/>`).join('\n')}
+    <xhtml:link rel="alternate" hreflang="x-default" href="${pageUrl(page.slug, twins.includes(DEFAULT_LANG) ? DEFAULT_LANG : lang)}"/>
   </url>`;
 }).join('\n')}
 </urlset>
@@ -447,7 +516,10 @@ ${INDEXING ? `\nSitemap: ${cfg.baseUrl}/sitemap.xml\n` : '# Preview: every page 
 const seenTitles = new Map();
 const seenMetas = new Map();
 
-for (const { page, html, out } of built) {
+const builtUrls = new Set(built.map(({ page, lang }) => pageUrl(page.slug, lang)));
+const PREFIXED = new RegExp(`^/(${LANGS.filter((l) => l !== DEFAULT_LANG).join('|')})(/.*)$`);
+
+for (const { page, html, out, lang } of built) {
   const text = html.replace(/<script[\s\S]*?<\/script>/g, ' ')
                    .replace(/<style[\s\S]*?<\/style>/g, ' ')
                    .replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
@@ -505,21 +577,37 @@ for (const { page, html, out } of built) {
     else if (!alt.trim()) fail(out, 5, `img with empty alt: ${tag.slice(0, 80)}`);
   }
 
-  // 6 — internal links resolve against the manifest
-  const slugs = new Set(pages.map((p) => p.slug));
+  // 6 — internal links resolve to a built page, in this page's own language. Only the
+  //     language switcher may cross languages; anything else is an untranslated link.
+  const outsideSwitch = html.replace(/<details class="lang-switch[\s\S]*?<\/details>/g, '');
   for (const [, href] of html.matchAll(/href="(\/[^"#?]*)"/g)) {
     if (href.startsWith('/assets/')) continue;
-    if (href === '/') continue;
-    const m = href.match(/^\/([\w-]+)\.html$/);
+    const pre = href.match(PREFIXED);
+    const l = pre ? pre[1] : DEFAULT_LANG;
+    const m = (pre ? pre[2] : href).match(/^\/(?:([\w-]+)\.html)?$/);
     if (!m) { fail(out, 6, `unrecognised internal link: ${href}`); continue; }
-    if (!slugs.has(m[1])) fail(out, 6, `internal link to unknown page: ${href}`);
+    if (!avail[l]?.has(m[1] || 'index')) fail(out, 6, `internal link to a page not built in ${l}: ${href}`);
+  }
+  for (const [, href] of outsideSwitch.matchAll(/href="(\/[^"#?]*)"/g)) {
+    if (href.startsWith('/assets/')) continue;
+    const l = (href.match(PREFIXED) || [])[1] || DEFAULT_LANG;
+    if (l !== lang) fail(out, 6, `links into the ${l} site outside the language switcher: ${href}`);
   }
 
   // 7 — lang + hreflang hygiene. hreflang must never point at the sister domain.
-  if (!/<html lang="bn">/.test(html)) fail(out, 7, 'missing <html lang="bn">');
+  if (!new RegExp(`<html lang="${lang}">`).test(html)) fail(out, 7, `missing <html lang="${lang}">`);
   for (const [, hl, href] of html.matchAll(/<link rel="alternate" hreflang="([^"]*)" href="([^"]*)"/g)) {
     if (!href.startsWith(cfg.baseUrl))
       fail(out, 7, `hreflang "${hl}" points off-domain (${href}) — declares the two properties duplicates`);
+    else if (!builtUrls.has(href)) fail(out, 7, `hreflang "${hl}" points at a page that was not built: ${href}`);
+  }
+
+  // 13 — a translated page carries no Bengali outside the switcher's "বাংলা" link. A hit
+  //      means a partial or fragment fell back to the Bengali version.
+  if (lang !== DEFAULT_LANG) {
+    const visible = outsideSwitch.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<[^>]+>/g, ' ');
+    const bn = visible.match(/[\u0980-\u09FF][\u0980-\u09FF\s]{0,30}/);
+    if (bn) fail(out, 13, `Bengali text on a ${lang} page: "${bn[0].trim()}"`);
   }
 
   // 11 — structural tags balance. An unclosed <button> or <div> silently swallows the
@@ -569,8 +657,12 @@ if (existsSync(sibling)) {
       if (t.length > 80) mine.set(t, out);
     }
   let dup = 0;
-  for (const f of readdirSync(sibling).filter((f) => f.endsWith('.html'))) {
-    const other = readFileSync(join(sibling, f), 'utf8');
+  const siblingFiles = [sibling, ...LANGS.filter((l) => l !== DEFAULT_LANG).map((l) => join(sibling, l))]
+    .filter((d) => existsSync(d))
+    .flatMap((d) => readdirSync(d).filter((f) => f.endsWith('.html')).map((f) => join(d, f)));
+  for (const file of siblingFiles) {
+    const f = file.slice(sibling.length + 1);
+    const other = readFileSync(file, 'utf8');
     for (const [, p] of other.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g)) {
       const t = norm(p.replace(/<[^>]+>/g, ''));
       if (t.length > 80 && mine.has(t)) {
@@ -587,7 +679,7 @@ if (existsSync(sibling)) {
 /* ------------------------------------------------------------------ report */
 
 console.log(`\n  ${cfg.siteName}  (${cfg.domain})`);
-console.log(`  built ${built.length}/${pages.length} pages · sitemap ${built.length} urls · 404 page · ${Object.keys(cfg.redirects || {}).length} redirects\n`);
+console.log(`  built ${LANGS.map((l) => `${l} ${avail[l].size}/${pages.length}`).join(' · ')} · sitemap ${built.length} urls · 404 page · ${Object.keys(cfg.redirects || {}).length} redirects\n`);
 for (const w of warns) console.log(`  ~ ${w}`);
 if (errors.length) {
   console.error(`\n  ✗ ${errors.length} gate failure(s):\n`);

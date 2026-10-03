@@ -1,0 +1,43 @@
+<footer class="mt-16 border-t-2 border-brand-navy bg-white">
+  <div class="mx-auto max-w-5xl px-4 py-10">
+    <div class="grid gap-8 md:grid-cols-3">
+      <div>
+        <img src="/assets/img/logo.png" alt="KK8 Review Bangladesh logo" width="104" height="25" class="h-[25px] w-auto">
+        <p class="mt-3 text-sm leading-bn text-brand-slate">{{taglineEn}}</p>
+        <p class="mt-3 text-xs leading-bn text-brand-slate">
+          Publisher: {{publisher.name}} · Editorial responsibility: {{author.name}}
+        </p>
+      </div>
+      <nav aria-label="Reviews and guides">
+        <p class="text-xs font-bold uppercase tracking-widest text-brand-slate">Reviews &amp; guides</p>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="/en/kk8-review.html" class="text-brand-navy underline decoration-brand-hair hover:decoration-brand-blue">Full KK8 review</a></li>
+          <li><a href="/en/is-kk8-legit.html" class="text-brand-navy underline decoration-brand-hair hover:decoration-brand-blue">Is KK8 safe?</a></li>
+          <li><a href="/en/spot-fake-kk8-sites.html" class="text-brand-navy underline decoration-brand-hair hover:decoration-brand-blue">How to spot fake KK8 sites</a></li>
+          <li><a href="/en/withdrawal-guide.html" class="text-brand-navy underline decoration-brand-hair hover:decoration-brand-blue">Withdrawal guide</a></li>
+          <li><a href="/en/faq.html" class="text-brand-navy underline decoration-brand-hair hover:decoration-brand-blue">FAQ</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-brand-slate">Licence information</p>
+        <p class="mt-3 text-xs leading-bn text-brand-slate">
+          KK8 is licensed under the Government of {{licence.authority}} — {{licence.text}} {{licence.number}}.
+          This was verified on the official platform on {{lastVerified}}.
+        </p>
+        <p class="mt-3 text-xs leading-bn text-brand-slate">
+          Official site: <a href="{{sisterSiteEn}}" rel="noopener" class="font-semibold text-brand-blue underline">{{sisterSiteNameEn}}</a>
+        </p>
+      </div>
+    </div>
+    <div class="mt-8 border-t border-brand-hair pt-6">
+      <p class="text-xs font-bold text-brand-navy">{{minAge}}+ · Responsible gaming</p>
+      <p class="mt-2 max-w-3xl text-xs leading-bn text-brand-slate">
+        This site is not for anyone under {{minAge}}, and it gives no financial or legal advice.
+        Gambling can become addictive. Support in Bangladesh — {{responsibleGambling.org}}:
+        <a href="tel:+8809612119911" class="font-semibold text-brand-blue underline">{{responsibleGambling.phone}}</a>.
+        Knowing the rules that apply where you live is the reader's own responsibility.
+      </p>
+      <p class="mt-4 text-xs text-brand-slate">© {{year}} {{siteName}} · Last verified {{lastVerified}}</p>
+    </div>
+  </div>
+</footer>

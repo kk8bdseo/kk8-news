@@ -4,16 +4,19 @@
       <a href="/" class="shrink-0" aria-label="{{siteNameBn}} — হোম">
         <img src="/assets/img/logo.png" alt="KK8 রিভিউ বাংলাদেশ লোগো" width="104" height="25" class="h-[25px] w-auto">
       </a>
-      <div class="border-l border-brand-hair pl-4">
+      <div class="hidden min-w-0 border-l border-brand-hair pl-4 sm:block">
         <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-blue">রিভিউ ও গাইড · বাংলাদেশ</p>
         <p class="text-xs text-brand-slate">{{tagline}}</p>
       </div>
-      <button type="button" id="navToggle" class="ml-auto rounded-base border border-brand-hair p-2 md:hidden"
+      <div class="ml-auto flex shrink-0 items-center gap-2">
+      {{langSwitch}}
+      <button type="button" id="navToggle" class="rounded-base border border-brand-hair p-2 md:hidden"
               aria-expanded="false" aria-controls="mobileNav" aria-label="মেনু খুলুন">
         <span class="block h-0.5 w-5 bg-brand-navy"></span>
         <span class="mt-1 block h-0.5 w-5 bg-brand-navy"></span>
         <span class="mt-1 block h-0.5 w-5 bg-brand-navy"></span>
       </button>
+      </div>
     </div>
     <nav class="hidden border-t border-brand-hair md:block" aria-label="প্রধান মেনু">
       <ul class="-mx-3 flex flex-wrap items-center">

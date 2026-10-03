@@ -7,6 +7,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/login-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/login-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/login-guide.html"/>
   </url>
   <url>
     <loc>https://kk8bd.news/</loc>
@@ -14,6 +16,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/"/>
   </url>
   <url>
     <loc>https://kk8bd.news/app-download-guide.html</loc>
@@ -21,13 +25,17 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/app-download-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/app-download-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/app-download-guide.html"/>
   </url>
   <url>
     <loc>https://kk8bd.news/faq.html</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/faq.html"/>
   </url>
   <url>
     <loc>https://kk8bd.news/bonus-review.html</loc>
@@ -35,6 +43,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/bonus-review.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/bonus-review.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/bonus-review.html"/>
   </url>
   <url>
     <loc>https://kk8bd.news/games-software.html</loc>
@@ -42,6 +52,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/games-software.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/games-software.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/games-software.html"/>
   </url>
   <url>
     <loc>https://kk8bd.news/news.html</loc>
@@ -49,6 +61,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/news.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/news.html"/>
   </url>
   <url>
     <loc>https://kk8bd.news/kk8-review.html</loc>
@@ -56,13 +70,17 @@
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/kk8-review.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/kk8-review.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/kk8-review.html"/>
   </url>
   <url>
     <loc>https://kk8bd.news/is-kk8-legit.html</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/is-kk8-legit.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/is-kk8-legit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/is-kk8-legit.html"/>
   </url>
   <url>
     <loc>https://kk8bd.news/registration-guide.html</loc>
@@ -70,6 +88,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/registration-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/registration-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/registration-guide.html"/>
   </url>
   <url>
     <loc>https://kk8bd.news/deposit-guide.html</loc>
@@ -77,6 +97,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/deposit-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/deposit-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/deposit-guide.html"/>
   </url>
   <url>
     <loc>https://kk8bd.news/withdrawal-guide.html</loc>
@@ -84,6 +106,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/withdrawal-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/withdrawal-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/withdrawal-guide.html"/>
   </url>
   <url>
     <loc>https://kk8bd.news/how-kk8-compares.html</loc>
@@ -91,6 +115,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/how-kk8-compares.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/how-kk8-compares.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/how-kk8-compares.html"/>
   </url>
   <url>
     <loc>https://kk8bd.news/support-review.html</loc>
@@ -98,13 +124,17 @@
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/support-review.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/support-review.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/support-review.html"/>
   </url>
   <url>
     <loc>https://kk8bd.news/player-ratings.html</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/player-ratings.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/player-ratings.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/player-ratings.html"/>
   </url>
   <url>
     <loc>https://kk8bd.news/spot-fake-kk8-sites.html</loc>
@@ -112,5 +142,151 @@
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/spot-fake-kk8-sites.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/spot-fake-kk8-sites.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/spot-fake-kk8-sites.html"/>
+  </url>
+  <url>
+    <loc>https://kk8bd.news/en/login-guide.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/login-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/login-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/login-guide.html"/>
+  </url>
+  <url>
+    <loc>https://kk8bd.news/en/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/"/>
+  </url>
+  <url>
+    <loc>https://kk8bd.news/en/app-download-guide.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/app-download-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/app-download-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/app-download-guide.html"/>
+  </url>
+  <url>
+    <loc>https://kk8bd.news/en/faq.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/faq.html"/>
+  </url>
+  <url>
+    <loc>https://kk8bd.news/en/bonus-review.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/bonus-review.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/bonus-review.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/bonus-review.html"/>
+  </url>
+  <url>
+    <loc>https://kk8bd.news/en/games-software.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/games-software.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/games-software.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/games-software.html"/>
+  </url>
+  <url>
+    <loc>https://kk8bd.news/en/news.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/news.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/news.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/news.html"/>
+  </url>
+  <url>
+    <loc>https://kk8bd.news/en/kk8-review.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/kk8-review.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/kk8-review.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/kk8-review.html"/>
+  </url>
+  <url>
+    <loc>https://kk8bd.news/en/is-kk8-legit.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/is-kk8-legit.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/is-kk8-legit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/is-kk8-legit.html"/>
+  </url>
+  <url>
+    <loc>https://kk8bd.news/en/registration-guide.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/registration-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/registration-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/registration-guide.html"/>
+  </url>
+  <url>
+    <loc>https://kk8bd.news/en/deposit-guide.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/deposit-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/deposit-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/deposit-guide.html"/>
+  </url>
+  <url>
+    <loc>https://kk8bd.news/en/withdrawal-guide.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/withdrawal-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/withdrawal-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/withdrawal-guide.html"/>
+  </url>
+  <url>
+    <loc>https://kk8bd.news/en/how-kk8-compares.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/how-kk8-compares.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/how-kk8-compares.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/how-kk8-compares.html"/>
+  </url>
+  <url>
+    <loc>https://kk8bd.news/en/support-review.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/support-review.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/support-review.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/support-review.html"/>
+  </url>
+  <url>
+    <loc>https://kk8bd.news/en/player-ratings.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/player-ratings.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/player-ratings.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/player-ratings.html"/>
+  </url>
+  <url>
+    <loc>https://kk8bd.news/en/spot-fake-kk8-sites.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="bn-BD" href="https://kk8bd.news/spot-fake-kk8-sites.html"/>
+    <xhtml:link rel="alternate" hreflang="en-BD" href="https://kk8bd.news/en/spot-fake-kk8-sites.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kk8bd.news/spot-fake-kk8-sites.html"/>
   </url>
 </urlset>
