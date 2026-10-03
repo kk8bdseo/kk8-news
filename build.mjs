@@ -9,7 +9,7 @@
  * No framework, no runtime. Node stdlib only. See docs spec §9.
  * Non-zero exit on any gate failure.
  */
-import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
@@ -375,6 +375,54 @@ for (const page of pages) {
   built.push({ page, html, out });
 }
 
+/* ---------------------------------------------- 404 page + redirect stubs */
+
+// GitHub Pages serves /404.html for any missing path — including every address
+// left over from whatever the domain hosted before. Never indexable.
+{
+  const notFound = read('partials/404.html');
+  const head404 = `  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>পেজটি খুঁজে পাওয়া যায়নি | ${esc(cfg.siteName)}</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="${cfg.themeColor}">
+  <link rel="icon" href="/assets/img/favicon-32x32.png" sizes="32x32">
+  <link rel="stylesheet" href="/assets/css/site.css">`;
+  const ctx404 = { ...cfg, nav: navLinks(''), moneyUrl: moneyUrl(), year: new Date().getFullYear(),
+    bodyClass: 'tpl-404', head: head404, schema: '', content: tokens(notFound, cfg, '404') };
+  writeFileSync(join(ROOT, '404.html'), tokens(includes(partial('layout')), ctx404, '404'));
+}
+
+// Old addresses that have a true equivalent here. GitHub Pages cannot send a
+// 301, so each gets a stub: an instant meta refresh, which Google treats as a
+// permanent redirect, plus a canonical to the target. Removing an entry from
+// site.config.json does not delete its folder — delete that by hand.
+const STUB_ROOT_BLOCKED = /^\/(assets|pages|partials|src|node_modules)\//;
+for (const [from, to] of Object.entries(cfg.redirects || {})) {
+  if (!/^\/[\w-]+(\/[\w-]+)*\/$/.test(from) || STUB_ROOT_BLOCKED.test(from)) {
+    fail('redirects', 6, `invalid redirect source "${from}" — use /folder/ form, outside build folders`);
+    continue;
+  }
+  const m = to === '/' ? ['', 'index'] : to.match(/^\/([\w-]+)\.html$/);
+  if (!m || !pages.some((p) => p.slug === m[1])) {
+    fail('redirects', 6, `redirect ${from} → ${to}: target is not a page in pages.json`);
+    continue;
+  }
+  const target = `${cfg.baseUrl}${to}`;
+  mkdirSync(join(ROOT, from), { recursive: true });
+  writeFileSync(join(ROOT, from, 'index.html'), `<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <title>${esc(cfg.siteName)}</title>
+  <link rel="canonical" href="${target}">
+  <meta http-equiv="refresh" content="0; url=${to}">
+</head>
+<body><p><a href="${to}">${esc(cfg.siteName)}</a></p></body>
+</html>
+`);
+}
+
 /* ------------------------------------------------------- sitemap + robots */
 
 const today = new Date().toISOString().slice(0, 10);
@@ -556,7 +604,7 @@ if (existsSync(sibling)) {
 /* ------------------------------------------------------------------ report */
 
 console.log(`\n  ${cfg.siteName}  (${cfg.domain})`);
-console.log(`  built ${built.length}/${pages.length} pages · sitemap ${built.length} urls\n`);
+console.log(`  built ${built.length}/${pages.length} pages · sitemap ${built.length} urls · 404 page · ${Object.keys(cfg.redirects || {}).length} redirects\n`);
 for (const w of warns) console.log(`  ~ ${w}`);
 if (errors.length) {
   console.error(`\n  ✗ ${errors.length} gate failure(s):\n`);

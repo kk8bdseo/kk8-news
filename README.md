@@ -128,6 +128,17 @@ URL would be reported as "Submitted URL marked noindex".
 `robots.txt` stays `Allow: /` in both modes on purpose: Google has to be able to
 fetch a page to see its `noindex`.
 
+### Missing pages and old addresses
+
+- `404.html` is generated from `partials/404.html`. GitHub Pages shows it for any
+  address that does not exist. It is always `noindex`.
+- `"redirects"` in `site.config.json` maps an old address to a page on this site,
+  e.g. `"/kk8-register/": "/register.html"`. The build writes a small forwarding
+  page at each old address (GitHub Pages cannot send a server 301; an instant
+  meta refresh is read by Google as a permanent redirect). Use the `/folder/`
+  form. The build fails if the target is not a page in `pages.json`.
+- Removing an entry does not delete its folder — delete the folder by hand.
+
 ---
 
 ## Rollback
@@ -162,4 +173,5 @@ sitemap.xml          generated from pages.json
 robots.txt           generated
 CNAME                custom domain for GitHub Pages
 _config.yml          keeps sources (pages/, partials/, pages.json …) off the published site
+404.html             generated "page not found" page
 ```
