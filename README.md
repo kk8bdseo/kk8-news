@@ -1,10 +1,10 @@
-# KK8 Review BD — Review & Trust Hub — `kk8.news`
+# KK8 Review BD — Review & Trust Hub — `kk8bd.news`
 
 Editorial review property in the KK8 Bangladesh two-site brand SEO campaign.
 Static HTML, Bengali content, deployed on GitHub Pages behind Cloudflare.
 
 **Search intent this property owns:** investigational (kk8 review, is kk8 legit, kk8 safe, kk8 bd, kk8 withdrawal, kk8 bonus, kk8 customer service).
-It must NOT compete with `kk8.site` on the same intent — that is what keeps both
+It must NOT compete with `kk8bd.site` on the same intent — that is what keeps both
 properties on page one instead of one filtering the other.
 
 ---
@@ -110,7 +110,7 @@ git add -A && git commit -m "content: <what changed>"
 git push
 ```
 
-GitHub Pages serves `main`. `CNAME` holds `kk8.news` — do not delete it, or the
+GitHub Pages serves `main`. `CNAME` holds `kk8bd.news` — do not delete it, or the
 custom domain unbinds.
 
 ### Launch switch — `"indexing"` in `site.config.json`
@@ -122,7 +122,7 @@ custom domain unbinds.
 
 To launch: set it to `true`, `npm run build`, commit, push. Then in Google Search
 Console submit `sitemap.xml` and request indexing for the homepage, the full
-review and "Is KK8 legit?" first — after kk8.site's Tier-1 pages. Do not submit the sitemap while the switch is `false` — every
+review and "Is KK8 legit?" first — after kk8bd.site's Tier-1 pages. Do not submit the sitemap while the switch is `false` — every
 URL would be reported as "Submitted URL marked noindex".
 
 `robots.txt` stays `Allow: /` in both modes on purpose: Google has to be able to

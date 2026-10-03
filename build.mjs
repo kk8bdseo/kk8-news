@@ -80,7 +80,7 @@ function providerGroup(id) {
 }
 
 /** Editorial provider table. The hub shows providers as text, not KK8's card art:
- *  the art lives on kk8.site, and a table keeps this property visually its own. */
+ *  the art lives on kk8bd.site, and a table keeps this property visually its own. */
 function providerTable() {
   return `<table class="data-table my-6">
   <thead><tr><th>ক্যাটাগরি</th><th>সংখ্যা</th><th>প্রোভাইডার</th></tr></thead>
