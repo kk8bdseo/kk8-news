@@ -211,7 +211,7 @@ function scorecard() {
         </div>
         <p class="mt-1 text-xs leading-bn text-brand-slate">${esc(tr(c, 'note'))}</p>
       </li>`).join('')}</ul>
-    <p class="mt-5 border-t border-brand-hair pt-4 text-xs leading-bn text-brand-slate">${esc(tr(r, 'methodology'))}</p>
+    <p class="mt-5 border-t border-brand-hair pt-4 text-xs leading-bn text-brand-slate">${esc(tr(r, 'methodology')).replace('{{lastVerified}}', cfg.lastVerified)}</p>
   </div>`;
 }
 
