@@ -306,43 +306,50 @@
           "name": "Lucky365",
           "img": "/assets/img/providers/provider-lucky365.webp",
           "w": 280,
-          "h": 359
+          "h": 359,
+          "logo": "/assets/img/logos/logo-lucky365.webp"
         },
         {
           "name": "JILI",
           "img": "/assets/img/providers/provider-jili.webp",
           "w": 280,
-          "h": 359
+          "h": 359,
+          "logo": "/assets/img/logos/logo-jili.webp"
         },
         {
           "name": "Pragmatic Play",
           "img": "/assets/img/providers/provider-pragmatic-play.webp",
           "w": 280,
-          "h": 359
+          "h": 359,
+          "logo": "/assets/img/logos/logo-pragmatic-play.webp"
         },
         {
           "name": "JDB",
           "img": "/assets/img/providers/provider-jdb.webp",
           "w": 280,
-          "h": 359
+          "h": 359,
+          "logo": "/assets/img/logos/logo-jdb.webp"
         },
         {
           "name": "FaChai",
           "img": "/assets/img/providers/provider-fachai.webp",
           "w": 280,
-          "h": 359
+          "h": 359,
+          "logo": "/assets/img/logos/logo-fachai.webp"
         },
         {
           "name": "Playtech",
           "img": "/assets/img/providers/provider-playtech.webp",
           "w": 280,
-          "h": 359
+          "h": 359,
+          "logo": "/assets/img/logos/logo-playtech.webp"
         },
         {
           "name": "PG Soft",
           "img": "/assets/img/providers/provider-pg-soft.webp",
           "w": 280,
-          "h": 359
+          "h": 359,
+          "logo": "/assets/img/logos/logo-pg-soft.webp"
         },
         {
           "name": "King Midas",
@@ -361,31 +368,36 @@
           "name": "Sexy Gaming",
           "img": "/assets/img/providers/provider-sexy-gaming.webp",
           "w": 280,
-          "h": 359
+          "h": 359,
+          "logo": "/assets/img/logos/logo-sexy-gaming.webp"
         },
         {
           "name": "Hot Road",
           "img": "/assets/img/providers/provider-hot-road.webp",
           "w": 280,
-          "h": 359
+          "h": 359,
+          "logo": "/assets/img/logos/logo-hot-road.webp"
         },
         {
           "name": "Big Gaming",
           "img": "/assets/img/providers/provider-big-gaming.webp",
           "w": 280,
-          "h": 359
+          "h": 359,
+          "logo": "/assets/img/logos/logo-big-gaming.webp"
         },
         {
           "name": "Playtech Live",
           "img": "/assets/img/providers/provider-playtech-live.webp",
           "w": 280,
-          "h": 359
+          "h": 359,
+          "logo": "/assets/img/logos/logo-playtech-live.webp"
         },
         {
           "name": "Evolution",
           "img": "/assets/img/providers/provider-evolution.webp",
           "w": 280,
-          "h": 359
+          "h": 359,
+          "logo": "/assets/img/logos/logo-evolution.webp"
         }
       ]
     },
@@ -398,25 +410,29 @@
           "name": "CMD368",
           "img": "/assets/img/providers/provider-cmd368.webp",
           "w": 280,
-          "h": 359
+          "h": 359,
+          "logo": "/assets/img/logos/logo-cmd368.webp"
         },
         {
           "name": "SBOBET",
           "img": "/assets/img/providers/provider-sbobet.webp",
           "w": 280,
-          "h": 359
+          "h": 359,
+          "logo": "/assets/img/logos/logo-sbobet.webp"
         },
         {
           "name": "9Wickets",
           "img": "/assets/img/providers/provider-9wickets.webp",
           "w": 280,
-          "h": 359
+          "h": 359,
+          "logo": "/assets/img/logos/logo-9wickets.webp"
         },
         {
           "name": "BTI",
           "img": "/assets/img/providers/provider-bti.webp",
           "w": 280,
-          "h": 359
+          "h": 359,
+          "logo": "/assets/img/logos/logo-bti.webp"
         }
       ]
     }
@@ -471,5 +487,6 @@
   "cloneCheckedOn": "2026-09-27",
   "cloneCheckedOnNote": "Date of the last clone-domain and 'kk8' SERP check. Kept separate from lastVerified so re-verifying platform facts never re-dates a clone finding that wasn't re-checked.",
   "productCategoriesNote": "Bangladesh platform: slots, live casino, sports. KK8's own BD page (kk8bdbest.com/seo-contents/seo-home-bd.html, read 2026-10-18) says lottery is 'coming soon'; the client confirmed in UAT that BD has no lottery yet. Racing removed at the client's request.",
-  "promotionsSource": "kk8bdbest.com/seo-contents/seo-home-bd.html — KK8's own Bangladesh SEO copy served by the money site, read 2026-10-18: 300% Welcome Bonus up to BDT 30,000; BDT 188 free credit for new members; reloads 50% slot / 10% live / 50% sports; daily check-in up to BDT 7,777; daily rebates 2% slot / 0.8% live casino / 0.8% sportsbook."
+  "promotionsSource": "kk8bdbest.com/seo-contents/seo-home-bd.html — KK8's own Bangladesh SEO copy served by the money site, read 2026-10-18: 300% Welcome Bonus up to BDT 30,000; BDT 188 free credit for new members; reloads 50% slot / 10% live / 50% sports; daily check-in up to BDT 7,777; daily rebates 2% slot / 0.8% live casino / 0.8% sportsbook.",
+  "providerLogosSource": "Client-supplied provider logos (3 Drive zips, 2026-10-21), 200x200 PNG re-encoded to 96x96 WebP; shown in the hub's provider table only — kk8bd.site keeps the demo-site card art. King Midas omitted: the client's file is named 'kingmaker.png' (a different provider) — awaiting confirmation. Ekor (lottery) logo received but not used while lottery is 'coming soon'."
 }

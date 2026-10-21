@@ -35,7 +35,10 @@
   .article ol { @apply mb-5 list-decimal space-y-2 pl-5; }
   .article li { @apply leading-bn text-brand-slate; }
   .article strong { @apply font-bold text-brand-navy; }
-  .article a { @apply font-semibold text-brand-blue underline decoration-brand-hair hover:decoration-brand-blue; }
+  /* Plain links in body copy only. Links that carry their own classes (buttons, cards, the contents
+     list) style themselves — the bare `.article a` rule out-specified `.text-white` and turned the
+     sidebar's "Go to the official site" button blue-on-blue (found 2026-10-21). */
+  .article a:not([class]) { @apply font-semibold text-brand-blue underline decoration-brand-hair hover:decoration-brand-blue; }
 
   .verdict {
     @apply rounded-base border border-brand-hair border-l-4 border-l-brand-blue bg-brand-tint p-6;

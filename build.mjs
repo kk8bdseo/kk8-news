@@ -41,11 +41,11 @@ const tr = (obj, key, lang = LANG) => obj?.[key + (lang === 'bn' ? 'Bn' : 'En')]
 /** Interface strings the build itself writes (everything else lives in partials/pages). */
 const UI = {
   bn: { home: 'হোম', provider: 'প্রোভাইডার', slotGame: (p) => `${p}-এর স্লট গেম`, language: 'ভাষা', country: 'বাংলাদেশ',
-        tableHead: ['ক্যাটাগরি', 'সংখ্যা', 'প্রোভাইডার'], toc: 'সূচিপত্র', tocLabel: 'এই পেজের সূচিপত্র',
+        tableHead: ['ক্যাটাগরি', 'সংখ্যা', 'প্রোভাইডার'], logo: 'লোগো', toc: 'সূচিপত্র', tocLabel: 'এই পেজের সূচিপত্র',
         editorialScore: 'সম্পাদকীয় স্কোর',
         nav: ['হোম', 'পূর্ণ রিভিউ', 'KK8 কি নিরাপদ?', 'ডিপোজিট গাইড', 'উইথড্র গাইড', 'বোনাস রিভিউ', 'ভুয়া সাইট চেনা', 'FAQ'] },
   en: { home: 'Home', provider: 'provider', slotGame: (p) => `slot game by ${p}`, language: 'Language', country: 'Bangladesh',
-        tableHead: ['Category', 'Count', 'Providers'], toc: 'Contents', tocLabel: 'Contents of this page',
+        tableHead: ['Category', 'Count', 'Providers'], logo: 'logo', toc: 'Contents', tocLabel: 'Contents of this page',
         editorialScore: 'Editorial score',
         nav: ['Home', 'Full review', 'Is KK8 safe?', 'Deposit guide', 'Withdrawal guide', 'Bonus review', 'Spot fake sites', 'FAQ'] },
 };
@@ -110,13 +110,20 @@ function providerGroup(id) {
   </ul>`;
 }
 
+/** One provider in the editorial table: the client-supplied logo (when there is one) beside the
+ *  name. Small and lazy — the table sits mid-page. The name stays as text, so the list still reads
+ *  and indexes without the images. */
+const providerChip = (p) => `<li class="m-0 inline-flex items-center gap-2 rounded-pill border border-brand-hair bg-white py-1 pl-1 pr-3 text-sm">${p.logo
+  ? `<img src="${p.logo}" alt="${esc(p.name)} ${ui().logo}" width="36" height="36" loading="lazy" decoding="async" class="m-0 h-9 w-9 rounded-base bg-white object-contain">`
+  : ''}<span>${esc(p.name)}</span></li>`;
+
 /** Editorial provider table. The hub shows providers as text, not KK8's card art:
  *  the art lives on kk8bd.site, and a table keeps this property visually its own. */
 function providerTable() {
   return `<table class="data-table my-6">
   <thead><tr>${ui().tableHead.map((h) => `<th>${h}</th>`).join('')}</tr></thead>
   <tbody>
-${(cfg.providerGroups || []).map((g) => `    <tr><td><strong>${esc(tr(g, 'label'))}</strong></td><td>${g.providers.length}</td><td>${g.providers.map((p) => esc(p.name)).join(', ')}</td></tr>`).join('\n')}
+${(cfg.providerGroups || []).map((g) => `    <tr><td><strong>${esc(tr(g, 'label'))}</strong></td><td>${g.providers.length}</td><td><ul class="m-0 flex list-none flex-wrap gap-2 p-0">${g.providers.map(providerChip).join('')}</ul></td></tr>`).join('\n')}
   </tbody>
 </table>`;
 }
