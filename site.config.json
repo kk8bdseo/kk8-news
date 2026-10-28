@@ -355,7 +355,8 @@
           "name": "King Midas",
           "img": "/assets/img/providers/provider-king-midas.webp",
           "w": 280,
-          "h": 359
+          "h": 359,
+          "logo": "/assets/img/logos/logo-king-midas.webp"
         }
       ]
     },
@@ -488,5 +489,5 @@
   "cloneCheckedOnNote": "Date of the last clone-domain and 'kk8' SERP check. Kept separate from lastVerified so re-verifying platform facts never re-dates a clone finding that wasn't re-checked.",
   "productCategoriesNote": "Bangladesh platform: slots, live casino, sports. KK8's own BD page (kk8bdbest.com/seo-contents/seo-home-bd.html, read 2026-10-18) says lottery is 'coming soon'; the client confirmed in UAT that BD has no lottery yet. Racing removed at the client's request.",
   "promotionsSource": "kk8bdbest.com/seo-contents/seo-home-bd.html — KK8's own Bangladesh SEO copy served by the money site, read 2026-10-18: 300% Welcome Bonus up to BDT 30,000; BDT 188 free credit for new members; reloads 50% slot / 10% live / 50% sports; daily check-in up to BDT 7,777; daily rebates 2% slot / 0.8% live casino / 0.8% sportsbook.",
-  "providerLogosSource": "Client-supplied provider logos (3 Drive zips, 2026-10-21), 200x200 PNG re-encoded to 96x96 WebP; shown in the hub's provider table only — kk8bd.site keeps the demo-site card art. King Midas omitted: the client's file is named 'kingmaker.png' (a different provider) — awaiting confirmation. Ekor (lottery) logo received but not used while lottery is 'coming soon'."
+  "providerLogosSource": "Client-supplied provider logos (3 Drive zips, 2026-10-21), 200x200 PNG re-encoded to 96x96 WebP; shown in the hub's provider table only — kk8bd.site keeps the demo-site card art. King Midas uses the client's file named 'kingmaker.png', confirmed 2026-10-28 to match KK8's own King Midas icon on prekk8.com/bd/slots. Ekor (lottery) logo received but not used while lottery is 'coming soon'."
 }
