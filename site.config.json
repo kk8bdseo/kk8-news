@@ -224,9 +224,9 @@
       },
       {
         "id": "bonus",
-        "labelBn": "বোনাস ও প্রোমোশন",
+        "labelBn": "বোনাস ও প্রমোশন",
         "score": 4.8,
-        "noteBn": "ওয়েলকাম, রিলোড, রিবেট ও ইভেন্ট প্রোমোশনের বিস্তৃত কাঠামো; বাংলাদেশের অফার টাকায় প্রকাশিত — ৩০০% স্লট ওয়েলকাম বোনাস ও ১৮৮ টাকার রেজিস্ট্রেশন বোনাসসহ।",
+        "noteBn": "ওয়েলকাম, রিলোড, রিবেট ও ইভেন্ট প্রমোশনের বিস্তৃত কাঠামো; বাংলাদেশের অফার টাকায় প্রকাশিত — ৩০০% স্লটস ওয়েলকাম বোনাস ও ৳১৮৮ রেজিস্ট্রেশন বোনাসসহ।",
         "labelEn": "Bonuses & promotions",
         "noteEn": "A broad structure of welcome, reload, rebate and event promotions, with Bangladesh offers published in BDT — including the 300% Slots Welcome Bonus and the BDT 188 Registration Bonus."
       },
@@ -242,7 +242,7 @@
         "id": "local",
         "labelBn": "বাংলাদেশ লোকালাইজেশন",
         "score": 4.6,
-        "noteBn": "পূর্ণ বাংলা ভাষা-সহায়তা, স্থানীয় পেমেন্ট ও টাকায় প্রোমোশনসহ বাংলাদেশের জন্য আলাদা প্ল্যাটফর্ম। এটি এখনও অফিসিয়ালি চালু হয়নি, আর লটারি শিগগিরই আসছে বলে উল্লেখ আছে।",
+        "noteBn": "পূর্ণ বাংলা ভাষা-সহায়তা, স্থানীয় পেমেন্ট ও টাকায় প্রমোশনসহ বাংলাদেশের জন্য আলাদা প্ল্যাটফর্ম। এটি এখনও অফিসিয়ালি চালু হয়নি, আর লটারি শিগগিরই আসছে বলে উল্লেখ আছে।",
         "labelEn": "Bangladesh localisation",
         "noteEn": "A dedicated Bangladesh platform with full Bengali-language support, local payments and BDT promotions. It hasn't officially launched yet, and lottery is still listed as coming soon."
       }

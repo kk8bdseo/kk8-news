@@ -43,7 +43,7 @@ const UI = {
   bn: { home: 'হোম', provider: 'প্রোভাইডার', slotGame: (p) => `${p}-এর স্লট গেম`, language: 'ভাষা', country: 'বাংলাদেশ',
         tableHead: ['ক্যাটাগরি', 'সংখ্যা', 'প্রোভাইডার'], logo: 'লোগো', toc: 'সূচিপত্র', tocLabel: 'এই পেজের সূচিপত্র',
         editorialScore: 'সম্পাদকীয় স্কোর',
-        nav: ['হোম', 'পূর্ণ রিভিউ', 'KK8 কি নিরাপদ?', 'ডিপোজিট গাইড', 'উইথড্র গাইড', 'বোনাস রিভিউ', 'ভুয়া সাইট চেনা', 'FAQ'] },
+        nav: ['হোম', 'পূর্ণ রিভিউ', 'KK8 কি নিরাপদ?', 'ডিপোজিট গাইড', 'উত্তোলন গাইড', 'বোনাস রিভিউ', 'ভুয়া সাইট চেনা', 'সাধারণ প্রশ্নোত্তর'] },
   en: { home: 'Home', provider: 'provider', slotGame: (p) => `slot game by ${p}`, language: 'Language', country: 'Bangladesh',
         tableHead: ['Category', 'Count', 'Providers'], logo: 'logo', toc: 'Contents', tocLabel: 'Contents of this page',
         editorialScore: 'Editorial score',
@@ -542,8 +542,11 @@ for (const { page, html, out, lang } of built) {
   if (h1s.length !== 1) fail(out, 1, `expected 1 <h1>, found ${h1s.length}`);
   else if (!/KK8/i.test(h1s[0])) fail(out, 1, 'h1 does not contain the brand token "KK8"');
 
-  // 1b — the Latin primary keyword must appear in the page (BD players type Latin)
-  if (!text.toLowerCase().includes(page.primaryKeyword.toLowerCase()))
+  // 1b — the Latin primary keyword must appear in the English twin (BD players type Latin).
+  // Bengali pages follow the client's Bengali translation (UAT 2026-11), which renders query
+  // phrases in Bengali ("KK8 বোনাস", not "KK8 bonus"); they carry the brand via the h1 check
+  // above, and hreflang pairs them with the English page that holds the Latin keyword.
+  if (lang !== DEFAULT_LANG && !text.toLowerCase().includes(page.primaryKeyword.toLowerCase()))
     fail(out, 1, `Latin primary keyword "${page.primaryKeyword}" absent from page text`);
 
   // 2 — title + meta present, unique, geo-signalled

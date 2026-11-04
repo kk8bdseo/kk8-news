@@ -86,8 +86,9 @@ if any page breaks one. This is deliberate — it is cheaper to fail a build tha
 to publish a page that quietly loses its ranking. Numbers match the build's
 error messages.
 
-1. Exactly one `<h1>`, containing `KK8`; the Latin primary keyword appears in the
-   page text (BD players type Latin)
+1. Exactly one `<h1>`, containing `KK8`; on English pages the Latin primary keyword
+   appears in the page text (BD players type Latin). Bengali pages follow the client's
+   Bengali translation and need only the brand.
 2. Title + meta description present, unique site-wide, carrying a geo token
 3. Canonical present and on the configured domain
 4. All JSON-LD parses; every declared schema type is emitted
