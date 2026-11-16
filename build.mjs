@@ -92,6 +92,16 @@ function tokens(html, ctx, where) {
 
 const moneyUrl = () => cfg.moneySite + (cfg.moneySiteParams || '');
 
+/** Cloudflare Web Analytics beacon: cookieless, so no consent banner. The token is public
+ *  by design (it ships in every page). Remove "cfAnalyticsToken" from site.config.json
+ *  to drop the beacon. */
+if (cfg.cfAnalyticsToken && !/^[0-9a-f]{32}$/.test(cfg.cfAnalyticsToken)) {
+  throw new Error('site.config.json: "cfAnalyticsToken" must be the 32-hex token from Cloudflare Web Analytics');
+}
+const cfBeacon = cfg.cfAnalyticsToken
+  ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${cfg.cfAnalyticsToken}"}'></script>`
+  : '';
+
 /* ------------------------------------------------------- computed fragments */
 
 /** KK8's own provider cards (name + category label printed on the art). Lazy: every
@@ -394,6 +404,7 @@ for (const base of pages) {
 
   const ctx = {
     ...cfg,
+    cfBeacon,
     page,
     head: head(page),
     schema: '',
@@ -447,7 +458,7 @@ LANG = DEFAULT_LANG;
   <meta name="theme-color" content="${cfg.themeColor}">
   <link rel="icon" href="/assets/img/favicon-32x32.png" sizes="32x32">
   <link rel="stylesheet" href="/assets/css/site.css">`;
-  const ctx404 = { ...cfg, lang: DEFAULT_LANG, nav: navLinks(''), langSwitch: langSwitch('index'), moneyUrl: moneyUrl(), year: new Date().getFullYear(),
+  const ctx404 = { ...cfg, cfBeacon, lang: DEFAULT_LANG, nav: navLinks(''), langSwitch: langSwitch('index'), moneyUrl: moneyUrl(), year: new Date().getFullYear(),
     bodyClass: 'tpl-404', head: head404, schema: '', content: tokens(notFound, cfg, '404') };
   writeFileSync(join(ROOT, '404.html'), tokens(includes(partial('layout')), ctx404, '404'));
 }
