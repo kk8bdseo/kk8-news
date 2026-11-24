@@ -7,7 +7,13 @@
       তা এক জায়গায়। প্রতিটি তথ্য KK8-এর অফিসিয়াল প্ল্যাটফর্মে সরাসরি যাচাই করা, এবং যা যাচাই করা
       যায়নি তা আলাদা করে চিহ্নিত।
     </p>
-    <p class="mt-4 text-xs text-brand-slate">সর্বশেষ যাচাই <time datetime="{{lastVerified}}" class="font-semibold text-brand-navy">{{lastVerified}}</time> · {{minAge}}+</p>
+    <div class="mt-7 flex flex-wrap gap-3">
+      <a href="{{moneyUrl}}" rel="nofollow noopener" target="_blank"
+         class="inline-block rounded-btn bg-brand-blue px-6 py-3 font-bold text-white transition hover:bg-brand-bright">এখনই রেজিস্টার করুন</a>
+      <a href="{{moneyUrl}}" rel="nofollow noopener" target="_blank"
+         class="inline-block rounded-pill border border-brand-blue bg-white px-6 py-3 font-bold text-brand-blue transition hover:bg-brand-tint">KK8 লগইন</a>
+    </div>
+    <p class="mt-5 text-xs text-brand-slate">সর্বশেষ যাচাই <time datetime="{{lastVerified}}" class="font-semibold text-brand-navy">{{lastVerified}}</time> · {{minAge}}+</p>
   </div>
 </section>
 
